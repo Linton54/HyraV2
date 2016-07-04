@@ -7,6 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!-- navigation for desktop -->
+<%= render 'layouts/navbar' %>
+
+<!-- navigation for mobile -->
+<% if user_signed_in? %>
+    <%= render 'layouts/mobilenav' %>
+<% end %>
+
+<!-- Display notice messages -->
+<%= render 'layouts/notice_messages'%>
 
 <%= yield %>
 

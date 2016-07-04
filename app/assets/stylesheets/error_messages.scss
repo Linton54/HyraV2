@@ -1,0 +1,28 @@
+$error_messages: #b94a48;
+$success_messages: #468847;
+
+.alert{
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  padding: 0;
+  color: $error_messages;
+  li {
+    list-style: none;
+  }
+   p {
+     margin: 15px 0 0 0;
+   }
+}
+
+.notice {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: $success_messages;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+  p {
+    margin: 15px 0 0 0;
+  }
+}

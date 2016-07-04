@@ -1,0 +1,38 @@
+$logo-color: #89bdd3;
+$background-color: white;
+$loginregister-color: #404040;
+
+.top-bar {
+  background-color: $background-color;
+  padding: 0px;
+  //border-bottom: 1px #dbdbdb solid;
+  margin-bottom: 50px;
+
+  strong a{
+    font-family: 'Yellowtail', cursive;
+    color: $logo-color;
+  }
+
+  .top-bar-left {
+    margin-top: 12px;
+
+    a {
+      color: $loginregister-color;
+    }
+  }
+
+  .nav-link {
+    margin-top: 9px;
+    line-height: 2.3em;
+    a {
+      color: black;
+    }
+
+    a:hover {
+      border-bottom: 1px black solid;
+    }
+
+  }
+
+}
+

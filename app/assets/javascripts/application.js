@@ -11,6 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
+//= require foundation.min.js
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+    $(document).foundation();
+    //$('.sticky').foundation('_calc', true); //allow to recalculate sticky
+});

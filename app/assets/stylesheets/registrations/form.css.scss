@@ -1,0 +1,59 @@
+$font-logo: 'Yellowtail', cursive;
+$font-sen: 'Assistant', sans-serif;
+
+@media screen and (max-width: 640px) {
+  .show-for-medium-up {
+    display: none !important; } }
+
+.registration-main {
+   margin-top: 50px;
+ }
+
+//make this global
+.form-setting{
+  height: 30px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.form-register {
+  background-color: white;
+  border: 1px solid #89bdd3;
+
+  input.button {
+    width: 100%;
+  }
+
+  .form-logo {
+    margin: 20px 0 10px 0;
+    color: #89bdd3;
+    font-weight: bold;
+    font-family: $font-logo;
+  }
+
+  .form-logo-tag {
+    font-family: $font-sen;
+    margin-bottom: 25px;
+    line-height: 19px;
+    color: #999;
+  }
+
+  .form-agreement{
+    color: #c9c9c9;
+    font-size: 12px;
+    margin: 0 45px 20px 45px;
+  }
+
+}
+
+.form-login {
+  border: 1px solid #89bdd3;
+  font-size: 14px;
+  margin-top: 20px;
+  color: #7a7a7a;
+  background-color: white;
+
+  p {
+    margin-top: 16px;
+  }
+}

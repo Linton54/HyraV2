@@ -1,0 +1,12 @@
+<% unless flash[:alert] %>
+    <% flash.each do |key, value| %>
+        <div class="<%= key %> callout text-center" data-closable>
+          <ul>
+            <li><p> <%= value %></p></li>
+          </ul>
+          <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+    <% end %>
+<% end %>

@@ -1,0 +1,21 @@
+<div class="row align-center">
+  <!--<div class="column medium-5 show-for-medium-up">Aligned to</div> uncomment this if you want to add image along side sign up-->
+
+  <div class="column medium-6 small-8">
+    <div class="row align-center form-register">
+      <div class="column medium-10 small-12">
+        <h1 class="text-center form-logo">Hyra</h1>
+        <h5 class="text-center form-logo-tag"><small>Sign up and to connect with your friends around the globe.</small></h5>
+        <%= render 'devise/registrations/new_form' %>
+        <p class="text-center form-agreement">By signing up, you agree to our <%= link_to  'Terms & Privacy Policy', "#" %></p>
+      </div>
+    </div>
+
+    <div class="row align-center form-login">
+      <div class="column medium-10 small-12">
+        <p class="text-center">Have an account? <%= link_to  'Log in', new_user_session_path %></p>
+      </div>
+    </div>
+  </div>
+
+</div>

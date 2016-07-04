@@ -1,0 +1,18 @@
+<div class="row align-center">
+  <!--<div class="column medium-5 show-for-medium-up">Aligned to</div> uncomment this if you want to add image along side sign up-->
+  <div class="column medium-6 small-8 registration-main">
+    <div class="row align-center form-register">
+      <div class="column medium-10 small-12">
+        <h1 class="text-center form-logo">Hyra</h1>
+        <%= render 'devise/sessions/new_session' %>
+      </div>
+    </div>
+
+    <div class="row align-center form-login">
+      <div class="column medium-10 small-12">
+        <p class="text-center">Don't have an account? <%= link_to  'Sign up', new_user_registration_path %></p>
+      </div>
+    </div>
+  </div>
+</div>
+

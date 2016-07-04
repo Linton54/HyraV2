@@ -1,0 +1,24 @@
+<div data-sticky-container class="show-for-small-only main-sticky-container">
+  <div class="main-sticky row align-center text-center sticky" data-sticky data-options="stickTo:top; stickyOn:small;">
+    <div class="columns small-3 mobile-nav-icon">
+      <a href="<%= root_path %>">
+        <i class="fa fa-nav-home fa-home fa-2x " aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="columns mobile-nav-icon">
+      <a href="#">
+        <i class="fa fa-search fa-2x" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="columns mobile-nav-icon">
+      <a href="#">
+        <i class="fa fa-inbox fa-2x" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="columns mobile-nav-icon">
+      <a href="<%= user_path(current_user.username) %>">
+        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</div>

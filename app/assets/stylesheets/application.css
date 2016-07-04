@@ -10,6 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require foundation.min.css
+ *= require foundation-flex.css
+ *= require mixins.scss
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
@@ -19,7 +23,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 body {
-    background-color: #fafafa;
-    font-family: 'Yellowtail', cursive;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
