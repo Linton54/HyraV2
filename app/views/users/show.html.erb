@@ -1,1 +1,48 @@
-<h4 id="test">Home Page</h4>
+<% provide(:title, "@#{@user.username}") %>
+
+<div class="row align-center text-center">
+  <div class="column small-12 large-7 medium-7 profile">
+    <div class="profile-background-img" data-interchange="[<%#= @user.profile_background_avatar.url %>, small], [<%#= @user.profile_background_avatar.url %>, medium], [<%#= @user.profile_background_avatar.url %>, large]">
+      <div class="columns profile-img large-12 small-12">
+        <div class="row">
+          <div class="column large-6 text-right">
+            <img class="thumbnail" src="<%#= @user.avatar.url %>" alt="User Photo">
+          </div>
+          <div class="column large-6">
+            <div class="row">
+              <div class="column-4 profile-username text-left">
+                <%= @user.username%>
+                <!--
+                <% if  @user == current_user %>
+                  <a data-toggle="l<%= @user.id %>"><i class="fa fa-upload" aria-hidden="true"></i></a>
+                <% end %>-->
+              </div>
+              <div class="column text-right" id="fue-button">
+                <%#= render 'relationships/relationships_form' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns large-12 small-12 profile-attr  align-self-bottom">
+        <div class="row text-center align-center">
+          <div class="columns small-3">
+            <span id="user-posts">0</span>
+            <h6>Posts</h6>
+          </div>
+          <div class="columns small-3">
+            <span id="user-followers">0<%#= @user.followers.count %></span>
+            <h6>Followers</h6>
+          </div>
+          <div class="columns small-3">
+            <span id="user-following">0<%#= @user.following.count %></span>
+            <h6>Following</h6>
+          </div>
+        </div>
+      </div>
+      <!-- highlight profile aatributes -->
+      <div class="column profile-bl align-self-top"></div>
+    </div>
+  </div>
+</div>

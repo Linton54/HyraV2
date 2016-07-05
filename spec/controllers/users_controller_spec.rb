@@ -1,12 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, type: :controller do
+RSpec.describe UsersController, type: [:request, :controller] do
 
-  describe "GET #show" do
-    it "returns http success" do
-      get :show
-      expect(response).to have_http_status(:success)
+    it "should redirect index when not logged in" do
+      get '/users/:id', id: 1
+      expect(response).to redirect_to(new_user_session_path)
     end
-  end
-
 end

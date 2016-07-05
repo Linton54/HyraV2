@@ -1,6 +1,8 @@
 class HomePagesController < ApplicationController
   before_action :check_user, only: [:home]
+
   def home
+    @posts = Post.all #paginate(page: params[:page], per_page: 10)
   end
 
   private

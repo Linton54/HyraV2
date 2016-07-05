@@ -3,11 +3,13 @@
       <div class="top-bar-title"><h4 class="subheader"><strong><%= link_to 'Hyra', root_path %></strong></h4></div>
 
       <div class="top-bar-left">
-        <a href="<%= root_path %>"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a>
+        <% if user_signed_in? %>
+          <a href="<%= root_path %>"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a>
+        <% end %>
       </div>
       <div class="top-bar-right nav-link">
         <% if user_signed_in? %>
-          <small class="nav-world"><%= link_to 'Write to Humanity', '#' %></small> <!--posts_path-->
+          <small class="nav-world"><%= link_to 'Write to Humanity', posts_path %></small>
             /
           <small class="nav-profile"><%= link_to 'Profile', user_path(current_user.username) %></small>
             /

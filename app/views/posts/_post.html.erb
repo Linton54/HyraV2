@@ -1,0 +1,34 @@
+<article class="column small-12 large-7 main-post">
+  <div class="row column post-nav">
+    <img class="thumbnail" src="<%#= post.user.avatar.url %>" alt="User Photo">
+    <span class="post-nav-username"><%= link_to  post.user.username, user_path(post.user.username) %>
+    </span>
+    <span class="post-nav-in">in</span>
+    <span class="post-nav-cate"><%= link_to  'Category', "#" %></span>
+    <span class="float-right post-nav-time"><%= time_ago_in_words(post.created_at) %></span>
+  </div>
+  <div class="row column post-body">
+    <div class="column post-title">
+      <%= link_to  post.title, "#" %>
+    </div>
+    <div class="column post-nav-content">
+      <%= post.content %>
+    </div>
+    <div class="column text-right">
+      <button id="post<%= post.id %>" data-toggle="post-options<%= post.id %>" aria-haspopup="true" tabindex="0"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i></button>
+    </div>
+  </div>
+  <div class="row column post-comment">commentss</div>
+</article>
+
+<div class="tiny reveal" id="post-options<%= post.id %>" data-reveal="3rsr2w-reveal" role="dialog" aria-hidden="false" data-yeti-box="exampleModal5" data-resize="exampleModal5" style="display: block; top: 112px;" tabindex="-1" data-events="resize">
+  <ul class="no-bullet text-center">
+    <% if post.user == current_user %>
+        <li><%= link_to 'Delete', post, data: { confirm: "Are you sure?" }, method: :delete %></li>
+        <li><%= link_to 'Edit', "#" %></li>
+    <% else %>
+        <li><%= link_to 'Report', "#" %></li>
+    <% end %>
+  </ul>
+  <button class="close-button" data-close aria-label="Close modal" type="button"><span aria-hidden="true">&times;</span></button>
+</div>

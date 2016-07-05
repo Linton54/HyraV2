@@ -4,11 +4,11 @@ FactoryGirl.define do
     #r.followed_id { rand(1001..2000) }
   #end
 
-  #factory :post do |p|
-    #user
-    #p.title { Faker::Book.title }
-    #p.content { Faker::Lorem.paragraph(rand(5..20)) }
-  #end
+  factory :post do |p|
+    user
+    p.title { Faker::Book.title }
+    p.content { Faker::Lorem.paragraph(rand(5..20)) }
+  end
 
   factory :user do |f|
 
@@ -17,14 +17,14 @@ FactoryGirl.define do
     f.password { "password" }
     f.password_confirmation { "password" }
 
-    #factory :user_with_posts do
-      #transient do
-        #posts_count 2
-      #end
+    factory :user_with_posts do
+      transient do
+        posts_count 2
+      end
 
-      #after(:create) do |user, evaluator|
-        #create_list(:post, evaluator.posts_count, user: user)
-      #end
-    #end
+      after(:create) do |user, evaluator|
+        create_list(:post, evaluator.posts_count, user: user)
+      end
+    end
   end
 end

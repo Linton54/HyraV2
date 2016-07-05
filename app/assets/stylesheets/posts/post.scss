@@ -1,0 +1,96 @@
+$post-title-color: #6ed3cf;
+
+.main-post {
+  background-color: white;
+  border: 1px #efefef solid;
+  border-radius: 5px;
+  font-size: smaller;
+  color: #3f3f3f;
+  margin-bottom: 50px;
+  //margin: 0 0 50px 0;
+
+  .post-nav {
+    padding: 14px 0 14px 0;
+    img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      border: 1px solid white;
+      margin-bottom: 0px;
+      margin-right: 5px;
+    }
+
+    .post-nav-username {
+      font-size: 14px;
+      a {
+        color: $post-title-color;
+      }
+    }
+
+    .post-nav-in {
+      font-size: 12px;
+      color: #bababa;
+    }
+
+    .post-nav-cate {
+      font-size: 14px;
+      a {
+        color: $post-title-color;
+
+        &:hover {
+          border-bottom: 1px $post-title-color solid;
+        }
+      }
+    }
+
+    .post-nav-time {
+      color: #bababa;
+      font-size: smaller;
+      padding-top: 10px;
+    }
+  }
+
+  .post-title{
+    padding-left: 0;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+      a{
+        color: hsla(0, 0%, 0%, 0.8);
+      }
+  }
+
+  .post-nav-content{
+    padding-left: 0;
+
+  }
+
+  .post-body {
+    border-bottom: 1px solid #efefef;
+    padding: 0 0 15px 0;
+
+    button {
+      color: #bababa;
+    }
+  }
+
+  .post-comment {
+    padding: 0 0 15px 0;
+  }
+}
+
+.reveal {
+  li {
+    padding: 5px;
+    border-bottom: 1px solid #efefef;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .reveal {
+    overflow: hidden;
+    top: 450px !important;
+    height: auto !important;
+    min-height: 80px;
+  }
+}

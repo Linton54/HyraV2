@@ -19,5 +19,5 @@
 
 $(function() {
     $(document).foundation();
-    //$('.sticky').foundation('_calc', true); //allow to recalculate sticky
+    $('.sticky').foundation('_calc', true); //allow to recalculate sticky
 });

@@ -1,12 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe HomePagesController, type: :controller do
+RSpec.describe HomePagesController, type: [:request, :controller] do
 
-  describe "GET #home" do
-    it "returns http success" do
-      get :home
-      expect(response).to have_http_status(:success)
+
+    it "it should redirect to log in when not logged in" do
+      get '/'
+      expect(response).to redirect_to(new_user_session_path)
     end
-  end
-
 end

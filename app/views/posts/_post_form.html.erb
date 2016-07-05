@@ -1,0 +1,15 @@
+<!-- <ul class="accordion" data-accordion="13pc49-accordion" data-allow-all-closed="true" role="tablist">
+  <li class="accordion-item" data-accordion-item="">
+    <a href="#" class="accordion-title" aria-controls="y1b9u0-accordion" role="tab" id="y1b9u0-accordion-label" aria-expanded="false" aria-selected="false">Accordion 3</a>
+    <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="y1b9u0-accordion-label" aria-hidden="true" id="y1b9u0-accordion" style="display: none;">
+      <textarea></textarea>
+      <button class="button">send</button>
+    </div>
+  </li>
+</ul> this is for comment -->
+<%= form_for @post do |f| %>
+    <%= render 'layouts/error_messages', object: @post %>
+    <%= f.text_field :title %>
+    <%= f.text_area :content, class: "post-content", rows: 10 %>
+    <%= f.submit "send", class: "button small" %>
+<% end %>

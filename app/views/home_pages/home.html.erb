@@ -1,0 +1,11 @@
+<%#= javascript_include_tag params[:controller] %>
+<% provide(:title, "Hyra") %>
+
+<div class="row align-center" id="posts">
+  <%= render @posts %>
+
+  <!--<div class="column small-12 large-7 text-center">
+    <%#= will_paginate @posts, :page_links => false  %>
+  </div>-->
+</div>
+

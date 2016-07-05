@@ -8,4 +8,7 @@ class User < ActiveRecord::Base
   VALID_USERNAME_REGEX = /\A[\w\s-]*\z/i
   validates :username, presence: true, uniqueness: true, length: { in: 3..8 },
             format: { with: VALID_USERNAME_REGEX }
+
+  #Posts
+  has_many :posts, dependent: :destroy
 end
