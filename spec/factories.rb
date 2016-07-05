@@ -1,13 +1,10 @@
 FactoryGirl.define do
-  #factory :relationship do |r|
-    #r.user_id { rand(1..1000) }
-    #r.followed_id { rand(1001..2000) }
-  #end
-
   factory :post do |p|
     user
     p.title { Faker::Book.title }
     p.content { Faker::Lorem.paragraph(rand(5..20)) }
+    category = ["Missing You," "Long Distance", "Heartbreak", "I Love You", "Happiness"]
+    p.category { category.sample }
   end
 
   factory :user do |f|

@@ -1,0 +1,7 @@
+<div class="row align-center">
+  <div class="column small-12 large-7 category-title"><%= @title %></div>
+  <%= render @categories, as: :post || "There are no posts available." %>
+  <!--<div class="column small-12 large-7 text-center">
+    <%#= will_paginate @posts, :page_links => false  %>
+  </div>-->
+</div>

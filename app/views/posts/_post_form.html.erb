@@ -9,7 +9,11 @@
 </ul> this is for comment -->
 <%= form_for @post do |f| %>
     <%= render 'layouts/error_messages', object: @post %>
+    <%= f.label :title %>
     <%= f.text_field :title %>
+    <%= f.label :content %>
     <%= f.text_area :content, class: "post-content", rows: 10 %>
-    <%= f.submit "send", class: "button small" %>
+    <%= f.label :category %>
+    <%= f.select :category, [['', nil], ['Missing You', "Missing You"], ['Long Distance', "Long Distance"], ['Heartbreak', "Heartbreak"], ['I Love You', "I Love You"], ['Happiness', "Happiness"]] %>
+    <%= f.submit "SEND", class: "button hollow small"%>
 <% end %>

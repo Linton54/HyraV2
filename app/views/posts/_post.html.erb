@@ -4,28 +4,31 @@
     <span class="post-nav-username"><%= link_to  post.user.username, user_path(post.user.username) %>
     </span>
     <span class="post-nav-in">in</span>
-    <span class="post-nav-cate"><%= link_to  'Category', "#" %></span>
+    <span class="post-nav-cate"><%= link_to  post.category, category_path(post.category) %></span>
     <span class="float-right post-nav-time"><%= time_ago_in_words(post.created_at) %></span>
   </div>
   <div class="row column post-body">
     <div class="column post-title">
-      <%= link_to  post.title, "#" %>
+      <%= link_to  post.title, post_path(post) %>
     </div>
     <div class="column post-nav-content">
       <%= post.content %>
     </div>
     <div class="column text-right">
-      <button id="post<%= post.id %>" data-toggle="post-options<%= post.id %>" aria-haspopup="true" tabindex="0"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i></button>
+      <button class="btn-settings" id="<%= post.id %>" data-toggle="post-options<%= post.id %>" aria-haspopup="true" tabindex="0"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i></button>
     </div>
   </div>
-  <div class="row column post-comment">commentss</div>
+  <div class="row column post-comment">
+    <i class="fa fa-heart-o fa-lg" aria-hidden="true">5</i>
+    <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true">6</i>
+  </div>
 </article>
 
 <div class="tiny reveal" id="post-options<%= post.id %>" data-reveal="3rsr2w-reveal" role="dialog" aria-hidden="false" data-yeti-box="exampleModal5" data-resize="exampleModal5" style="display: block; top: 112px;" tabindex="-1" data-events="resize">
   <ul class="no-bullet text-center">
     <% if post.user == current_user %>
         <li><%= link_to 'Delete', post, data: { confirm: "Are you sure?" }, method: :delete %></li>
-        <li><%= link_to 'Edit', "#" %></li>
+        <li id="modal<%= post.id %>"><%= link_to 'Edit', edit_post_path(post) %></li>
     <% else %>
         <li><%= link_to 'Report', "#" %></li>
     <% end %>

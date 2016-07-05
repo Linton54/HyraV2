@@ -29,6 +29,14 @@ describe Post, type: :model do
     expect(new.title).to eq("Banana")
   end
 
+  it "category should be present" do
+    expect(build(:post, category: " ")).not_to be_valid
+  end
+
+  it "category should be present" do
+    expect(build(:post, category: "Missing You")).to be_valid
+  end
+
   it "order should be most recent" do
     old = create(:post)
     new = create(:post)
