@@ -19,7 +19,7 @@ feature "UsersLogin", type: [:feature, :userhelper, :request] do
     user.confirm
     log_in(user)
     expect(page).to have_current_path(root_path)
-    find_link('Write to Humanity').visible?
+    find_link('Write a letter').visible?
     find_link('Profile').visible?
     find_link('Signout').visible?
     expect(page).to have_content('Signed in successfully')

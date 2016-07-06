@@ -1,4 +1,9 @@
 FactoryGirl.define do
+  factory :relationship do |r|
+    r.follower_id { rand(1..1000) }
+    r.followed_id { rand(1001..2000) }
+  end
+
   factory :post do |p|
     user
     p.title { Faker::Book.title }

@@ -16,7 +16,7 @@ feature "HomePages", type: [:feature, :userhelper] do
   scenario "User log in" do
     user.confirm #confirm email address
     log_in(user)
-    page.assert_selector('a', text: 'Write to Humanity')
+    page.assert_selector('a', text: 'Write a letter')
     page.assert_selector('a', text: 'Profile')
     page.assert_selector('a', text: 'Signout')
   end

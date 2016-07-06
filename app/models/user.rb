@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
             format: { with: VALID_USERNAME_REGEX }
 
   #User Avatar
-  has_attached_file :avatar, styles: {thumb: "150x150>"},
+  has_attached_file :avatar, styles: {thumb: "150x150"},
                     default_url: "https://s3.amazonaws.com/images-hyra/user_default.png"
   #default_url: "https://s3.amazonaws.com/hyraweb/user.png"
 
@@ -26,4 +26,30 @@ class User < ActiveRecord::Base
 
   #Posts
   has_many :posts, dependent: :destroy
+
+  #Relationships
+  #following
+  has_many :following_relationships, class_name: "Relationship",
+                                     foreign_key: "follower_id",
+                                     dependent: :destroy
+  has_many :following, through: :following_relationships, source: :followed
+
+  #follower
+  has_many :follower_relationships, class_name: "Relationship",
+                                    foreign_key: "followed_id",
+                                    dependent: :destroy
+  has_many :followers, through: :follower_relationships, source: :follower
+
+  #Relationship Methods
+  def follow(other_user)
+    following_relationships.create(followed_id: other_user.id)
+  end
+
+  def following?(other_user)
+    following.include?(other_user)
+  end
+
+  def unfollow(other_user)
+    following_relationships.find_by(followed_id: other_user.id).destroy
+  end
 end
