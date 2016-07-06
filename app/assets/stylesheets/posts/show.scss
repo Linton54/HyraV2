@@ -1,5 +1,5 @@
 .show-post {
-  background-color: #fafafa;
+  background-color: white;
 
   .post-title{
     margin: 20px 0 20px 0;
@@ -16,18 +16,37 @@
 
   .post-tags {
     margin-top: 15px;
+    font-size: 12px;
+    color: #bababa;
   }
 
   .post-social {
     margin-top: 30px;
+
+    .fa-heart-o {
+      color: #6ed3cf;
+    }
+
+    .fa-comments-o {
+      margin-left: 15px;
+    }
+
+    .fa-facebook-square {
+      color: #3b5998;
+      margin-right: 15px;
+    }
+
+    .fa-twitter {
+      color: #2eacf6
+    }
   }
 
   .show-post-uimg {
     padding-right: 0;
     margin-top: 30px;
     .thumbnail{
-      height: 80px;
-      width: 80px;
+      height: 60px;
+      width: 60px;
       border-radius: 50%;
       border: 1px solid white;
       margin-bottom: 0px;
@@ -39,8 +58,9 @@
   .showt-post-unt {
     margin-top: 30px;
     padding-left: 0;
+
     .show-post-um {
-      font-size: 18px;
+      font-size: 14px;
       padding-left: 0;
     }
 

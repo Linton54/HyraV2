@@ -3,7 +3,8 @@ $post-title-color: #6ed3cf;
 .main-post {
   background-color: white;
   border: 1px #efefef solid;
-  border-radius: 5px;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.04);
   font-size: smaller;
   color: #3f3f3f;
   margin-bottom: 10px;
@@ -65,6 +66,19 @@ $post-title-color: #6ed3cf;
     padding-left: 0;
 
   }
+  .post-readmore{
+    margin-top: 10px;
+    padding-left: 0;
+
+    a{
+      color: #bababa;
+      font-size: 12px;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
 
   .post-body {
     border-bottom: 1px solid #efefef;
@@ -75,8 +89,15 @@ $post-title-color: #6ed3cf;
     }
   }
 
-  .post-comment {
-    padding: 0 0 15px 0;
+  .post-loveit {
+    margin: 10px 0 10px 0;
+    .fa-heart-o {
+      color: #6ed3cf;
+    }
+
+    span {
+      color: #bababa;
+    }
   }
 }
 

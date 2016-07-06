@@ -14,12 +14,13 @@ $nav-control-color: #0a0a0a;
       .fa-search { @extend .fa-home }
       .fa-inbox  { @extend .fa-home }
       .fa-user   { @extend .fa-home }
+      .fa-pencil { @extend .fa-home }
     }
   }
 }
 
 @media  screen and (max-width: 640px)  {
   .activeNav{
-    border-bottom: 5px #00CAFB solid;
+    border-bottom: 5px #6ed3cf solid;
   }
 }

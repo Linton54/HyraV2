@@ -9,7 +9,7 @@
       </div>
       <div class="top-bar-right nav-link">
         <% if user_signed_in? %>
-          <small class="nav-world"><%= link_to 'Write to Humanity', posts_path %></small>
+          <small class="nav-world"><%= link_to 'Write', posts_path %></small>
             /
           <small class="nav-profile"><%= link_to 'Profile', user_path(current_user.username) %></small>
             /

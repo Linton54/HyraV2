@@ -12,15 +12,19 @@
       <%= link_to  post.title, post_path(post) %>
     </div>
     <div class="column post-nav-content">
-      <%= post.content %>
+      <%= truncate(post.content, length: 300, omission: '. . .') %>
     </div>
+    <div class="column post-readmore">
+      <%= link_to 'Read more', post_path(post) %>
+    </div>
+
     <div class="column text-right">
       <button class="btn-settings" id="<%= post.id %>" data-toggle="post-options<%= post.id %>" aria-haspopup="true" tabindex="0"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i></button>
     </div>
   </div>
-  <div class="row column post-comment">
-    <i class="fa fa-heart-o fa-lg" aria-hidden="true">5</i>
-    <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true">6</i>
+  <div class="row column post-loveit">
+    <i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>
+    <span class="love-count">10</span>
   </div>
 </article>
 
