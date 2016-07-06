@@ -24,10 +24,13 @@
       </div>
 
       <div class="column large-2 small-3 text-center show-post-uimg">
-        <img class="thumbnail" src="<%#= post.user.avatar.url %>" alt="User Photo">
+        <img class="thumbnail" src="<%= @post.user.avatar.url(:thumb) %>" alt="User Photo">
       </div>
       <div class="column large-10 small-8 showt-post-unt">
-        <div class="column small-12 medium-12 large-12 show-post-um"><%= @post.user.username %></div>
+        <div class="column small-12 medium-12 large-12 show-post-um">
+          <%= @post.user.username %>
+
+        </div>
         <div class="column small-12 medium-12 large-12 show-post-time"><%= time_ago_in_words(@post.created_at) %></div>
       </div>
     </div>

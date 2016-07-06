@@ -71,9 +71,8 @@ describe User, type: :model do
   end
 
   it "associated posts should be destroyed" do
-    user = create(:user, username: "dsadsad", email: "dasda@yahoo.com")
-    user.posts.create(title: "dsada", content: "This is an example words")
-    expect(user.posts.count).to eq(1)
+    user = create(:user_with_posts)
+    expect(user.posts.count).to eq(2)
     user.destroy
     expect(Post.count).to eq(0)
   end
@@ -88,28 +87,28 @@ describe User, type: :model do
     marv.unfollow(juriz)
     marv.following?(juriz) == false
   end
-
+=end
 
   #attachment
-  it { should have_attached_file(:avatar) }
-  it { should validate_attachment_content_type(:avatar)
+  it { expect have_attached_file(:avatar) }
+  it { expect validate_attachment_content_type(:avatar)
                   .allowing('image/png', 'image/gif')
                   .rejecting('text/plain', 'text/xml') }
-  it { should validate_attachment_size(:avatar).less_than(2.megabytes) }
-  it { should have_attached_file(:profile_background_avatar) }
-  it { should validate_attachment_content_type(:profile_background_avatar)
+  it { expect validate_attachment_size(:avatar).less_than(2.megabytes) }
+  it { expect have_attached_file(:profile_background_avatar) }
+  it { expect validate_attachment_content_type(:profile_background_avatar)
                   .allowing('image/png', 'image/gif')
                   .rejecting('text/plain', 'text/xml') }
-  it { should validate_attachment_size(:profile_background_avatar).less_than(2.megabytes) }
+  it { expect validate_attachment_size(:profile_background_avatar).less_than(2.megabytes) }
 
   it "should have default avatar" do
     user = build(:user)
-    user.avatar.url.should == "https://s3.amazonaws.com/images-hyra/user_default.png"
+    expect(user.avatar.url).to eq("https://s3.amazonaws.com/images-hyra/user_default.png")
   end
 
   it "should have default profile_background_avatar" do
     user = build(:user)
-    user.profile_background_avatar.url.should == "https://s3.amazonaws.com/images-hyra/background_default.jpg"
+    expect(user.profile_background_avatar.url).to eq("https://s3.amazonaws.com/images-hyra/background_default.jpg")
   end
 
   it "should have the right path for avatar and profile_background_avatarqq" do
@@ -120,11 +119,9 @@ describe User, type: :model do
                   profile_background_avatar_file_name: 'background.png',
                   profile_background_avatar_content_type: 'image/png',
                   profile_background_avatar_file_size: 1024 )
-    user.avatar_file_size.should == 1024
+    expect(user.avatar_file_size).to eq(1024)
 
-    user.avatar.url.should == "/system/users/avatars/000/000/001/original/ngc.png"
-    user.avatar(:thumb).should == "/system/users/avatars/000/000/001/thumb/ngc.png"
-
+    expect(user.avatar.url).to eq("/system/users/avatars/000/000/001/original/ngc.png")
+    expect(user.avatar(:thumb)).to eq("/system/users/avatars/000/000/001/thumb/ngc.png")
   end
-=end
 end

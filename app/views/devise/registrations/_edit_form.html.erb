@@ -5,7 +5,7 @@
     <div class="row">
       <div class="column large-4">
         <%= f.label :avatar, autocomplete: "off" %>
-        <img class="thumbnail edit-img" src="<%= resource.avatar.url %>" alt="User Photo">
+        <img class="thumbnail edit-img" src="<%= resource.avatar.url(:thumb) %>" alt="User Photo">
       </div>
       <div class="column text-left align-self-middle ">
         <%= f.file_field :avatar%>
@@ -14,7 +14,7 @@
       <div class="column small-12 edit-background-img">
         <%= f.label "Profile Background", autocomplete: "off" %>  <i>(atleast 800x600 image for best layout)</i>
             <div class="thumbnail">
-                <img src= "<%= resource.profile_background_avatar.url %>">
+                <img src= "<%= resource.profile_background_avatar.url(:large) %>">
             </div>
       </div>
       <div class="column text-left align-self-middle ">

@@ -1,6 +1,6 @@
 <article class="column small-12 large-7 main-post">
   <div class="row column post-nav">
-    <img class="thumbnail" src="<%#= post.user.avatar.url %>" alt="User Photo">
+    <img class="thumbnail" src="<%= post.user.avatar.url(:thumb) %>" alt="User Photo">
     <span class="post-nav-username"><%= link_to  post.user.username, user_path(post.user.username) %>
     </span>
     <span class="post-nav-in">in</span>
@@ -12,7 +12,7 @@
       <%= link_to  post.title, post_path(post) %>
     </div>
     <div class="column post-nav-content">
-      <%= truncate(post.content, length: 300, omission: '. . .') %>
+      <%= truncate(post.content, length: 400, omission: '...') %>
     </div>
     <div class="column post-readmore">
       <%= link_to 'Read more', post_path(post) %>
