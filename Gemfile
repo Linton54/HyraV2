@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'aws-sdk'
 gem 'devise', '~> 4.1', '>= 4.1.1'
 gem 'coffee-script-source', '~> 1.8.0'
 gem 'jquery-turbolinks'
