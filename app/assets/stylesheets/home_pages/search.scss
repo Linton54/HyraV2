@@ -1,0 +1,40 @@
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+.ui-autocomplete, .ui-autocomplete:hover,
+.ui-menu-item, .ui-menu-item:hover,
+.ui-menu-item a, .ui-menu-item a:hover,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-focus,
+.ui-menu .ui-menu-item a.ui-state-active,
+.ui-menu .ui-menu-item a
+{ background: #ffffff none no-repeat;
+  padding:0;
+  margin:0;
+  display:block;
+  border:0;
+  border-collapse:collapse;
+}
+
+.ui-autocomplete {
+  max-width: 300px;
+  margin-right: 20px;
+  border-radius: 5px;
+
+  .ui-menu-item {
+    border-bottom: 1px solid #bababa ;
+    padding: 15px 15px 15px 15px;
+    border-style: solid;
+
+    a{
+      font-size: 12px;
+    }
+  }
+
+  .ui-state-focus {
+
+  }
+}

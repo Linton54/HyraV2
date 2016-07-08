@@ -1,9 +1,9 @@
-<% unless current_user == @user %>
-  <% if current_user.following?(@user) %>
-      <%= render 'relationships/unfollow' %>
+<% unless real_current_user?(object) %>
+  <% if current_user.following?(object) %>
+        <%= button_to "Following", relationship_path(id: object), method: :delete, remote: true, class: "button tiny success" %>
   <% else %>
-      <%= render 'relationships/follow' %>
+        <%= button_to "Follow", relationships_path(id: object), remote: true, class: "button tiny hollow" %>
   <% end %>
 <% else %>
-  <%= link_to "Edit Profile", edit_user_registration_path(@user) , class: "button tiny secondary profile-edit-button" %>
+  <%= link_to "Edit Profile", edit_user_registration_path(object) , class: "button tiny secondary profile-edit-button" %>
 <% end %>

@@ -28,8 +28,7 @@
       </div>
       <div class="column large-10 small-8 showt-post-unt">
         <div class="column small-12 medium-12 large-12 show-post-um">
-          <%= @post.user.username %>
-
+          <%= link_to @post.user.username, user_path(@post.user.username) %>
         </div>
         <div class="column small-12 medium-12 large-12 show-post-time"><%= time_ago_in_words(@post.created_at) %></div>
       </div>

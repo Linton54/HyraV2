@@ -14,6 +14,7 @@
  *= require foundation-flex.css
  *= require mixins.scss
  *= require font-awesome
+ *= require jquery-ui/autocomplete
  *= require_tree .
  *= require_self
  */

@@ -1,0 +1,26 @@
+.random-users {
+    padding: 20px 20px 20px 20px;
+    background-color: white;
+    border: 1px #efefef solid;
+    border-radius: 3px;
+
+    a {
+      color: #999;
+      font-size: 14px;
+    }
+
+    img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      border: 1px solid white;
+      margin-bottom: 0px;
+      margin-right: 5px;
+    }
+
+  .random-body-post  {
+    min-height: 100px;
+    color: #bababa;
+    font-size: 12px;
+  }
+}

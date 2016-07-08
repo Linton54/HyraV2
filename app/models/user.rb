@@ -52,4 +52,9 @@ class User < ActiveRecord::Base
   def unfollow(other_user)
     following_relationships.find_by(followed_id: other_user.id).destroy
   end
+
+  #Search user
+  def self.terms_for(prefix)
+    where("username like?", prefix + "%").limit(10).pluck(:username)
+  end
 end

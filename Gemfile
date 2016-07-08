@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'rack-mini-profiler'
+gem 'jquery-ui-rails'
 gem 'aws-sdk'
 gem 'devise', '~> 4.1', '>= 4.1.1'
 gem 'coffee-script-source', '~> 1.8.0'
@@ -41,7 +43,7 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  #gem 'puma', '~> 3.4'
+  gem 'puma', '~> 3.4'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

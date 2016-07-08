@@ -1,2 +1,2 @@
-$('#fue-button').html("<%= j render('relationships/unfollow') %>")
+$('#fue-button<%= @user.id %>').html("<%= j render('relationships/unfollow') %>")
 $('#user-followers').html("<%= @user.followers.count %>")
