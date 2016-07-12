@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root 'home_pages#home'
 
   devise_for :users
@@ -8,4 +7,6 @@ Rails.application.routes.draw do
   resources :posts
   resources :relationships, only: [:create, :destroy]
   resources :search_suggestions, only: [:index]
+  resources :messages, only: [:create, :destroy]
+  resources :inboxes, only: [:create, :destroy]
 end

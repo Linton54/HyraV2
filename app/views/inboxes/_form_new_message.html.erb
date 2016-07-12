@@ -1,0 +1,17 @@
+<%= form_for message, url: inboxes_path, remote: true do |f| %>
+    <%= render 'layouts/error_messages', object: message %>
+    <div class="columns small-12 medium-12 large-12" id="notice"></div>
+    <div class="columns small-1 medium-1 large-1 send-to">To:
+    </div>
+    <div class="columns small-11 medium-11 large-11 send-u">
+      <%= f.text_field :recipient, placeholder: 'username...', class: "form-setting new-recipient" %>
+    </div>
+
+    <div class="columns small-12 medium-12 large-12">
+      <%= f.text_area :content, placeholder: 'message...', class: "post-content new-message", rows: 10 %>
+    </div>
+
+    <div class="columns small-12 medium-12 large-12 text-right">
+     <%= f.submit "Send", class: "button small"%>
+    </div>
+<% end %>

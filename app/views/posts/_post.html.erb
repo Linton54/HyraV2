@@ -27,7 +27,7 @@
   </div>
 </article>
 
-<div class="tiny reveal" id="post-options<%= post.id %>" data-reveal="3rsr2w-reveal" role="dialog" aria-hidden="false" data-yeti-box="exampleModal5" data-resize="exampleModal5" style="display: block; top: 112px;" tabindex="-1" data-events="resize">
+<div class="tiny reveal post-dr" id="post-options<%= post.id %>" data-reveal="3rsr2w-reveal" role="dialog" aria-hidden="false" data-yeti-box="exampleModal5" data-resize="exampleModal5" style="display: block; top: 112px;" tabindex="-1" data-events="resize">
   <ul class="no-bullet text-center">
     <% if post.user == current_user %>
         <li><%= link_to 'Delete', post, data: { confirm: "Are you sure?" }, method: :delete %></li>

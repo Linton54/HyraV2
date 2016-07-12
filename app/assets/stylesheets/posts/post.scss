@@ -104,12 +104,12 @@ $post-title-color: #6ed3cf;
 .reveal {
   li {
     padding: 5px;
-    border-bottom: 1px solid #efefef;
+    //border-bottom: 1px solid #efefef;
   }
 }
 
 @media only screen and (max-width: 640px) {
-  .reveal {
+  .post-dr {
     overflow: hidden;
     top: 450px !important;
     height: auto !important;

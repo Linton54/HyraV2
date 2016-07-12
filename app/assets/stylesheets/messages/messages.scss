@@ -1,0 +1,45 @@
+.main-convo{
+  padding: 0px;
+  height: 100%;
+  overflow: auto;
+
+  .msg-img {
+    padding-right: 5px;
+    margin-left: 5px;
+
+    img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+  }
+
+  .msg-username {
+    font-weight: bold;
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .msg-msg {
+    margin-top: 15px;
+
+    .msg-r {
+
+        border-radius: 10px;
+        background-color: #efefef;
+        padding: 10px;
+        font-size: 12px;
+
+    }
+
+    .msg-s {
+       max-width: 60%;
+        border-radius: 10px;
+        background-color: #c2e7ff;
+        padding: 10px;
+        font-size: 12px;
+
+    }
+
+  }
+}

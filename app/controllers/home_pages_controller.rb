@@ -4,6 +4,7 @@ class HomePagesController < ApplicationController
   before_action :set_category, only: [:show]
 
   def home
+    @messages = current_user.received_messages.all
     @posts = Post.all #paginate(page: params[:page], per_page: 10)
   end
 

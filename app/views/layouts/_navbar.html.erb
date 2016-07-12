@@ -1,19 +1,24 @@
 <div class="top-bar hide-for-small-only">
     <nav class="column row large-8">
-      <div class="column large-2">
+      <div class="column large-4 medium-3">
         <div class="top-bar-title"><h4 class="subheader"><strong><%= link_to 'Hyra', root_path %></strong></h4></div>
         <% if user_signed_in? %>
           <a href="<%= root_path %>"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a>
         <% end %>
       </div>
 
-      <div class="column large-8 nav-link text-right">
-        <div class="column large-4">
-          <input class="nav-search" type="text" placeholder="search">
+      <div class="column large-8  medium-9 nav-link text-right">
+        <div class="column large-4 medium-3">
+          <% if user_signed_in? %>
+           <input class="nav-search" type="text" placeholder="search">
+          <% end %>
         </div>
-        <div class="column large-8">
+        <div class="column large-8  medium-9">
           <% if user_signed_in? %>
               <a href="<%= users_path %>"><i class="fa fa-connectdevelop" aria-hidden="true"></i></a>
+              /
+              <a data-toggle="inbox"><i class="fa fa-inbox" aria-hidden="true"></i></a>
+              <%= render 'inboxes/user_inbox' %>
               /
               <small class="nav-world"><%= link_to 'Write a letter', posts_path %></small>
               /

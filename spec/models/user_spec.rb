@@ -7,12 +7,12 @@ describe User, type: :model do
   end
 
   it "reject signup without or invalid usernmae" do
-    expect(build(:user, username: "   ")).to_not be_valid
+    expect(build(:user, username: "   ")).not_to be_valid
   end
 
   it "has a unique username" do
     expect(create(:user, username: "Marv")).to be_valid
-    expect(build(:user, username: "Marv")).to_not be_valid
+    expect(build(:user, username: "Marv")).not_to be_valid
   end
 
   it "is invalid without email" do
@@ -30,31 +30,31 @@ describe User, type: :model do
   it "should reject username minimum length of < 3 and max is > 8" do
     username = %w{ 3asda1231 dasd51234 23 ad 1a }
     username.each do |u|
-      expect(build(:user, username: u)).to_not be_valid
+      expect(build(:user, username: u)).not_to be_valid
     end
   end
 
   it "should reject username with special characters" do
     username = %w{ @21 ka.@ 1a@ a32% da%12.3 asd@3/4@ }
     username.each do |u|
-      expect(build(:user, username: u)).to_not be_valid
+      expect(build(:user, username: u)).not_to be_valid
     end
   end
 
   it "reject password length < 6" do
     password = "a" * 5
-    expect(build(:user, password: password)).to_not be_valid
+    expect(build(:user, password: password)).not_to be_valid
   end
 
   it "accept password length >= 6" do
     password = "a" * 10
-    expect(build(:user, password: password)).to_not be_valid
+    expect(build(:user, password: password)).not_to be_valid
   end
 
   it "should reject invalid email address" do
     emails = %w[user@example,com user_at_foo.org user.name@example. foo@bar_baz.com foo@bar+baz.com]
     emails.each do |email|
-      expect(build(:user, email: email)).to_not be_valid
+      expect(build(:user, email: email)).not_to be_valid
     end
   end
 
@@ -67,7 +67,7 @@ describe User, type: :model do
 
   it "should reject duplicate email" do
     expect(create(:user, email: "user1@yahoo.com")).to be_valid
-    expect(build(:user, email: "user1@yahoo.com")).to_not be_valid
+    expect(build(:user, email: "user1@yahoo.com")).not_to be_valid
   end
 
   it "associated posts should be destroyed" do
@@ -77,17 +77,15 @@ describe User, type: :model do
     expect(Post.count).to eq(0)
   end
 
-=begin
   it "should follow and unfollow a user" do
     marv = create(:user)
     juriz = create(:user)
-    marv.following?(juriz) == false
+    expect(marv.following?(juriz)).to be false
     marv.follow(juriz)
-    marv.following?(juriz) == true
+    expect(marv.following?(juriz)).to be true
     marv.unfollow(juriz)
-    marv.following?(juriz) == false
+    expect(marv.following?(juriz)).to be false
   end
-=end
 
   #attachment
   it { expect have_attached_file(:avatar) }

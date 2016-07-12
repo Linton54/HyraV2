@@ -24,6 +24,10 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :profile_background_avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment_size :profile_background_avatar, :less_than => 2.megabytes
 
+  #Messages
+  has_many :sent_messages, class_name: "Inbox", foreign_key: "sender_id", dependent: :destroy
+  has_many :received_messages, class_name: "Inbox", foreign_key: "receiver_id", dependent: :destroy
+
   #Posts
   has_many :posts, dependent: :destroy
 
@@ -39,6 +43,11 @@ class User < ActiveRecord::Base
                                     foreign_key: "followed_id",
                                     dependent: :destroy
   has_many :followers, through: :follower_relationships, source: :follower
+
+  #User Methods
+  def find_user_by_username(user)
+    User.find_by(username: user)
+  end
 
   #Relationship Methods
   def follow(other_user)
@@ -56,5 +65,29 @@ class User < ActiveRecord::Base
   #Search user
   def self.terms_for(prefix)
     where("username like?", prefix + "%").limit(10).pluck(:username)
+  end
+
+  #Inbox is unique
+  #sender receiver
+  def sr_inbox_exists?(sender, receiver)
+    Inbox.exists?(sender_id: sender.id, receiver_id: receiver.id)
+  end
+
+  #receiver sender
+  def rs_inbox_exists?(sender, receiver)
+    Inbox.exists?(receiver_id: sender.id, sender_id: receiver.id)
+  end
+
+  def find_inbox(sender, receiver)
+    Inbox.find_by(sender_id: sender.id, receiver_id: receiver.id)
+  end
+
+  def create_inbox(receiver)
+    sent_messages.create(receiver_id: receiver.id)
+  end
+
+  #Distinct receive messages
+  def inbox
+    received_messages
   end
 end

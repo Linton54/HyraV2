@@ -1,0 +1,23 @@
+<div class="reveal tiny inbox" id="inbox" data-reveal data-animation-in="slide-in-down fast" data-animation-out="slide-out-up fast" >
+
+  <div class="row text-left">
+    <div class="columns inbox-nav">
+      <div class="columns medium-12 small-9 large-12 text-center">
+        <a class="float-left" data-open="send"><i class="fa fa-plus fa=lg" aria-hidden="true"></i></a>
+        Messages
+      </div>
+    </div>
+
+    <div class="columns mbox small-12 large-12 ">
+      <div class="columns small-12 main-inbox">
+        <% unless current_user.received_messages.empty? %>
+            <%= render current_user.inbox %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <button class="close-button" data-close aria-label="Close reveal tiny" type="button"><span aria-hidden="true">&times;</span></button>
+</div>
+
+<%= render 'inboxes/compose_message' %>

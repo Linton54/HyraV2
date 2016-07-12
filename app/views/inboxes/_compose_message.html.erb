@@ -1,0 +1,19 @@
+<div class="reveal tiny send" id="send" data-overlay="false"  data-reveal data-multiple-opened="true" >
+  <div class="row text-left">
+    <div class="columns send-nav">
+      <div class="columns medium-12 small-9 large-12 text-center">
+        <a class="float-left" data-close aria-label="Close reveal"><i class="fa fa-arrow-left fa-lg" aria-hidden="true"></i></a>
+        New Message
+      </div>
+    </div>
+
+    <div class="columns sbox small-12 large-12 ">
+      <div class="columns small-12 main-send">
+        <div class="row">
+          <%= render 'inboxes/form_new_message' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="close-button" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button>
+</div>

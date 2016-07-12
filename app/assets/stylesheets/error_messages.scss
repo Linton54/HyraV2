@@ -5,12 +5,15 @@ $success_messages: #468847;
   background-color: #f2dede;
   border-color: #eed3d7;
   padding: 0;
+  margin: 10px 0 0 0;
   color: $error_messages;
   li {
     list-style: none;
   }
    p {
-     margin: 15px 0 0 0;
+     padding-top: 10px;
+     font-size: 12px;
+     margin: 0;
    }
 }
 
@@ -18,11 +21,14 @@ $success_messages: #468847;
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: $success_messages;
+  margin: 10px 0 0 0;
   padding: 0;
   li {
     list-style: none;
   }
   p {
-    margin: 15px 0 0 0;
+    font-size: 12px;
+    padding-top: 10px;
+    margin: 0;
   }
 }

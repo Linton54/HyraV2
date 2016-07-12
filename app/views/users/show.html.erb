@@ -1,9 +1,9 @@
 <% provide(:title, "@#{@user.username}") %>
 
 <div class="row align-center text-center">
-  <div class="column small-12 large-7 medium-7 profile">
+  <div class="columns small-12 large-7 medium-7 profile">
     <div class="profile-background-img" data-interchange="[<%= @user.profile_background_avatar.url(:large) %>, small], [<%= @user.profile_background_avatar.url(:large) %>, medium], [<%= @user.profile_background_avatar.url(:large) %>, large]">
-      <div class="column text-right fue-button" id="fue-button<%= @user.id %>">
+      <div class="columns text-right fue-button" id="fue-button<%= @user.id %>">
         <%= render 'relationships/relationships_form', object: @user %>
       </div>
 
@@ -24,16 +24,16 @@
         </div>
       </div>
       <!-- highlight profile aatributes -->
-      <div class="column profile-bl align-self-top"></div>
+      <div class="columns profile-bl align-self-top"></div>
     </div>
 
 
     <div class="row">
-      <div class="column large-4 small-4 text-right profile-img">
+      <div class="columns large-4 small-4 text-right profile-img">
         <img class="thumbnail" src="<%= @user.avatar.url(:thumb) %>" alt="User Photo">
       </div>
-      <div class="column large-8 small-8">
-          <div class="column profile-username text-left">
+      <div class="columns large-8 small-8">
+          <div class="columns profile-username text-left">
             <%= @user.username%>
           </div>
       </div>

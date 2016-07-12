@@ -1,0 +1,24 @@
+<div class="reveal tiny conversation" id="convo<%= object[:inbox].id %>" data-overlay="false"  data-reveal data-multiple-opened="true" >
+  <div class="row text-left main-conversation">
+    <div class="columns medium-12 large-12 text-left convo-nav">
+      <div class="row">
+        <div class="columns small-3">
+          <a data-close aria-label="Close reveal"><i class="fa fa-arrow-left fa-lg" aria-hidden="true"></i></a>
+        </div>
+        <div class="columns small-4 text-right"> <%=  object[:inbox].sender.username %></div>
+      </div>
+    </div>
+
+    <div class="columns cbox small-12 large-12">
+      <div class="columns small-12 large-12 sender main-convo main-convo<%= object[:inbox].id %>">
+          <%= render object[:messages] , object: object[:inbox].sender.username%>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="columns reply-box small-12 large-12 ">
+    <%= render 'messages/form_reply_message', object: object[:inbox] %>
+  </div>
+  <button class="close-button" data-close aria-label="Close reveal" type="button"><span aria-hidden="true">&times;</span></button>
+</div>

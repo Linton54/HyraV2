@@ -25,4 +25,9 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  #Create messages in any views
+  def message
+    @message ||= Message.new
+  end
 end

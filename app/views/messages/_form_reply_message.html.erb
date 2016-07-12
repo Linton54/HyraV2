@@ -1,0 +1,11 @@
+<%= form_for message, remote: true do |f| %>
+    <%= f.hidden_field :recipient, value: object.sender.username %>
+
+    <div class="columns small-10 medium-10 large-10 reply">
+      <%= f.text_area :content, placeholder: 'Write a message...', rows: 0, class: "reply" + object.id.to_s %>
+    </div>
+
+    <div class="columns small-2 medium-2 large-2 text-right reply-btn">
+      <%= f.submit "Send", class: "button"%>
+    </div>
+<% end %>
