@@ -27,15 +27,12 @@
       <div class="columns profile-bl align-self-top"></div>
     </div>
 
-
     <div class="row">
       <div class="columns large-4 small-4 text-right profile-img">
         <img class="thumbnail" src="<%= @user.avatar.url(:thumb) %>" alt="User Photo">
       </div>
       <div class="columns large-8 small-8">
-          <div class="columns profile-username text-left">
-            <%= @user.username%>
-          </div>
+          <p class="profile-username text-left"><%= @user.username%></p>
       </div>
     </div>
   </div>

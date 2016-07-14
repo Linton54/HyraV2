@@ -22,6 +22,10 @@ class InboxesController < ApplicationController
     end
   end
 
+  def destroy
+
+  end
+
   private
 
   def sender_exists?

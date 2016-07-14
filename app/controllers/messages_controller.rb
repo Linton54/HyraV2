@@ -1,8 +1,7 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
   before_action :find_receiver, only: [:create]
-
-
+  
   def create
     if current_user.rs_inbox_exists?(@receiver, current_user)
       old_inbox =  current_user.find_inbox(@receiver, current_user)
@@ -21,6 +20,10 @@ class MessagesController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+
   end
 
   private

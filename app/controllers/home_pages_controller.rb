@@ -5,7 +5,7 @@ class HomePagesController < ApplicationController
 
   def home
     @messages = current_user.received_messages.all
-    @posts = Post.all #paginate(page: params[:page], per_page: 10)
+    @posts = Post.all.limit(10) #paginate(page: params[:page], per_page: 10)
   end
 
   def show

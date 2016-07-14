@@ -4,7 +4,7 @@ class CreateMessages < ActiveRecord::Migration
       t.text :content
       t.string :recipient
       t.boolean :read, default: false
-      t.references :inboxes, index: true, foreign_key: true
+      t.references :inbox, index: true, foreign_key: true
 
       t.timestamps null: false
     end

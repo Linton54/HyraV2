@@ -44,6 +44,9 @@ class User < ActiveRecord::Base
                                     dependent: :destroy
   has_many :followers, through: :follower_relationships, source: :follower
 
+  #retrieve user except current_user
+  scope :all_except, ->(user, count) { where.not(id: (user.following.ids << user.id) ).limit(count) }
+
   #User Methods
   def find_user_by_username(user)
     User.find_by(username: user)
