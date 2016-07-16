@@ -2,7 +2,7 @@
   <div class="columns medium-12 small-12 large-12 inbox-body">
     <span class="inbox-img float-left"><img src="<%= inbox.sender.avatar.url(:thumb) %>" alt="User Photo"></span>
     <p class="inbox-username small-12 large-12"><%= inbox.sender.username %></p>
-    <p class="inbox-msg small-12 large-12"><%= truncate(inbox.messages.last.content, length: 60, omission: '...') %><span class="float-right">1 hr</span></p>
+    <p class="inbox-msg small-12 large-12"><%= truncate(inbox.messages.last.content, length: 50, omission: '...') %><span class="float-right">1 hr</span></p>
   </div>
 
 

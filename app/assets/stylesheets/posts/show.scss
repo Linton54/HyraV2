@@ -1,5 +1,8 @@
 .show-post {
-  background-color: #fafafa;
+  background-color: white;
+  border: 1px #efefef solid;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.04);
+  border-radius: 3px;
 
   .post-title{
     margin: 20px 0 20px 0;
@@ -10,7 +13,7 @@
   .post-content{
     white-space: pre-line;
     line-height: 135%;
-    font-size: 16px;
+    font-size: 15px;
     color: #666666;
   }
 
@@ -43,7 +46,7 @@
 
   .show-post-uimg {
     padding-right: 0;
-    margin-top: 30px;
+    margin: 30px 0 15px 0;
     .thumbnail{
       height: 60px;
       width: 60px;

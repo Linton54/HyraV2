@@ -17,7 +17,7 @@
   }
 
   .profile-username {
-    padding: 10px 0 0 0;
+    padding: 10px 0 0 15px;
     font-size: 20px;
     font-weight: bold;
     color: black;
@@ -105,16 +105,19 @@
       height: 235px;
     }
 
+
     .profile-img {
-      img {
-        bottom: 50px;
-        height: 90px;
-        width: 90px;
+        img {
+          bottom: 50px;
+          height: 90px;
+          width: 90px;
+        }
       }
-    }
 
     .profile-username {
-      padding: 0;
+        padding: 0 0 0 15px;
+        font-size: 16px;
+
     }
   }
 }

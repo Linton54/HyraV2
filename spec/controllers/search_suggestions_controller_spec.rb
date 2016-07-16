@@ -1,12 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe SearchSuggestionControllers, type: :controller do
+RSpec.describe SearchSuggestionsController, type: [:request, :controller] do
 
-  describe "GET #index" do
-    it "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
+    it "should redirect to index when user not logged in" do
+      get '/search_suggestions'
+      expect(response).to redirect_to(new_user_session_path)
     end
-  end
-
 end

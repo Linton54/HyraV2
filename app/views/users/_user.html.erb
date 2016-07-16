@@ -1,15 +1,16 @@
 <div class="row random-users">
-  <div class="columns small-8 large-8 text-left">
-    <img class="thumbnail" src="<%= user.avatar.url(:thumb) %>" alt="User Photo">
-    <span class=""><%= link_to  user.username, user_path(user.username) %></span>
+    <div class="columns large-12 small-12 medium-12">
+      <div class="columns small-8 medium-8 large-8 text-left">
+        <img class="thumbnail" src="<%= user.avatar.url(:thumb) %>" alt="User Photo">
+        <span class=""><%= link_to  user.username, user_path(user.username) %></span>
+      </div>
 
-  </div>
-  <% unless real_current_user?(user) %>
-  <div class="columns small-4 large-4 text-right" id="fue-button<%= user.id %>">
-     <%= render 'relationships/relationships_form', object: user %>
-  </div>
-  <% end %>
-  <div class="columns small-12 large-12 random-body-post text-center">
+      <div class="columns small-4 medium-4 large-4 text-right" id="fue-button<%= user.id %>">
+        <%= render 'relationships/relationships_form', object: user %>
+      </div>
+    </div>
+
+    <div class="columns small-12 medium-12 large-12 random-body-post text-center">
       No post yet
-  </div>
+    </div>
 </div>

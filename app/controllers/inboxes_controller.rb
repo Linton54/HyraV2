@@ -12,8 +12,8 @@ class InboxesController < ApplicationController
         end
       end
     else
-      new_inbox = current_user.create_inbox(@receiver)
-      @message =  new_inbox.messages.build(message_params)
+      @new_inbox = current_user.create_inbox(@receiver)
+      @message =  @new_inbox.messages.build(message_params)
       if @message.save
         respond_to do |format|
           format.js { flash.now[:notice] = "Message is sent to #{@receiver.username}" }

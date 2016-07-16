@@ -1,8 +1,8 @@
 <% if flash[:alert].present? %>
-$("#notice").html("<%= j render('layouts/error_messages', object: inbox) %>");
+  $("#notice").html("<%= j render('layouts/error_messages', object: inbox) %>");
 <% else %>
-$(".new-recipient").val("")
-$(".new-message").val("")
-//$(".main-convo").append("<%= j render @message %>"); //only render if message is new
-$("#notice").html("<%= j render('layouts/notice_messages', object: inbox) %>");
+  $(".new-recipient").val("")
+  $(".new-message").val("")
+  //$(".main-convo").append("<%= j render @message %>"); //only render if message is new
+  $("#notice").html("<%= j render('layouts/notice_messages', object: inbox) %>");
 <% end %>
