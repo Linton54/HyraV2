@@ -1,29 +1,41 @@
 <div data-sticky-container class="show-for-small-only main-sticky-container">
   <div class="main-sticky row align-center text-center sticky" data-sticky data-options="stickTo:top; stickyOn:small;">
-    <div class="columns mobile-nav-icon">
-      <a href="<%= root_path %>">
-        <i class="fa fa-nav-home fa-home fa-2x " aria-hidden="true"></i>
-      </a>
-    </div>
-    <div class="columns mobile-nav-icon">
-      <a href="<%= users_path %>">
-        <i class="fa fa-search fa-2x" aria-hidden="true"></i>
-      </a>
-    </div>
-    <div class="columns mobile-nav-icon">
-      <a href="<%= posts_path %>">
-        <i class="fa fa-pencil fa-2x" aria-hidden="true"></i>
-      </a>
-    </div>
-    <div class="columns mobile-nav-icon">
-      <a data-toggle="inbox">
-        <i class="fa fa-inbox fa-2x" aria-hidden="true"></i>
-      </a>
-    </div>
-    <div class="columns mobile-nav-icon">
-      <a href="<%= user_path(current_user.username) %>">
-        <i class="fa fa-user fa-2x" aria-hidden="true"></i>
-      </a>
-    </div>
+    <% if user_signed_in? %>
+      <div class="columns mobile-nav-icon">
+        <a href="<%= root_path %>">
+          <i class="fa fa-nav-home fa-home fa-2x " aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="columns mobile-nav-icon">
+        <a href="<%= users_path %>">
+          <i class="fa fa-search fa-2x" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="columns mobile-nav-icon">
+        <a href="<%= posts_path %>">
+          <i class="fa fa-pencil fa-2x" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="columns mobile-nav-icon">
+        <a data-toggle="inbox">
+          <i class="fa fa-inbox fa-2x" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="columns mobile-nav-icon">
+        <a href="<%= user_path(current_user.username) %>">
+          <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+        </a>
+      </div>
+    <% else %>
+        <div class="columns">
+          <%= link_to 'Home', root_path %>
+        </div>
+        <div class="columns">
+          <%= link_to 'Log in', new_user_session_path %>
+        </div>
+        <div class="columns">
+          <%= link_to 'Sign up', new_user_registration_path %>
+        </div>
+    <% end %>
   </div>
 </div>

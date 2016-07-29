@@ -6,7 +6,7 @@ $font-sen: 'Assistant', sans-serif;
     display: none !important; } }
 
 .registration-main {
-   margin-top: 50px;
+
  }
 
 //make this global
@@ -55,5 +55,11 @@ $font-sen: 'Assistant', sans-serif;
 
   p {
     margin-top: 16px;
+  }
+}
+
+@media screen and (max-width: 640px)  {
+  .form-register {
+    margin-top: 50px;
   }
 }

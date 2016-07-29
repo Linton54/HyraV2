@@ -4,7 +4,7 @@ class HomePagesController < ApplicationController
   before_action :set_category, only: [:show]
 
   def home
-    @messages = current_user.received_messages.all
+    @messages = user_signed_in? ? current_user.received_messages.all : User.first.received_messages.all
     @posts = Post.all.limit(10) #paginate(page: params[:page], per_page: 10)
   end
 
@@ -16,7 +16,7 @@ class HomePagesController < ApplicationController
   private
   #check wethere the user has not post any post or friend post then flash make friends
   def check_user
-    redirect_to new_user_session_path unless user_signed_in?
+    #redirect_to new_user_session_path unless user_signed_in? #uncomment to view posts without signing in
   end
 
   def set_category
