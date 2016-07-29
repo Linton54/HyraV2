@@ -1,28 +1,21 @@
-== README
+# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple app that uses devise to authenticate users to log in. users then can upload profile photo and create a posts. much like letter.
+This is my second time building this app due to very messy code when i first time build it. It was also first time learning Ruby on Rails.
+As i became more confortable with rails and learn new techniques i made sure that i used them to this new version of this app. Also,
+it is fun cleaning messy codes :)
 
-Things you may want to cover:
+##Functionality
+*User can register/login
+*User can create posts
+*Send Messages to other users
+*Follow/Unfollow users
+*User can upload profile picture
+*Search other users
 
-* Ruby version
+* Ruby version 2.2.4
+* Ruby version 4.2.5.1
+* Gem used: foundation, jquery-rails, aws-sdk, paperclip, font-awesome-rails, devise
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* TestingGem used: rspec-rails, factory_girl_rails, capybara
+* Testing helper Gem used: factory_girl_rails, capybara, faker
