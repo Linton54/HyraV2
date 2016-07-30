@@ -2,7 +2,7 @@
 
 <div class="row align-center text-center">
   <div class="columns small-12 large-7 medium-7 profile">
-    <div class="profile-background-img" data-interchange="[<%= @user.profile_background_avatar.url(:large) %>, small], [<%= @user.profile_background_avatar.url(:large) %>, medium], [<%= @user.profile_background_avatar.url(:large) %>, large]">
+    <div class="profile-background-img" data-interchange="[<%= @user.profile_background_avatar.url(:small) %>, small], [<%= @user.profile_background_avatar.url(:medium) %>, medium], [<%= @user.profile_background_avatar.url(:large) %>, large]">
       <div class="columns text-right fue-button" id="fue-button<%= @user.id %>">
         <%= render 'relationships/relationships_form', object: @user %>
       </div>
@@ -33,6 +33,7 @@
         </div>
         <div class="columns large-8 small-8 text-left profile-username">
           <span class=""><%= @user.username%></span>
+          <small><%= link_to 'Signout', destroy_user_session_path, method: :delete, class: "float-right show-for-small-only" %></small>
         </div>
       </div>
   </div>

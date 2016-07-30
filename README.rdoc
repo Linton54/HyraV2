@@ -1,17 +1,19 @@
-# README
+=README
 
 This is a simple app that uses devise to authenticate users to log in. users then can upload profile photo and create a posts. much like letter.
 This is my second time building this app due to very messy code when i first time build it. It was also first time learning Ruby on Rails.
-As i became more confortable with rails and learn new techniques i made sure that i used them to this new version of this app. Also,
-it is fun cleaning messy codes :)
+As i became more confortable with rails and learn new techniques i made sure that i used them to this new version of this app. I still have a
+lot to learn, and i will contrinue improving. Check out the app: (https://still-taiga-72621.herokuapp.com/)
 
-##Functionality
-*User can register/login
-*User can create posts
-*Send Messages to other users
-*Follow/Unfollow users
-*User can upload profile picture
-*Search other users
+===Functionality
+* Mobile Friendly
+* User can register/login
+* User can create posts
+* Used Devise Confirmable to confirm registration via email
+* Send Messages to other users (users must reload the page to view the image, reason why i learn React.JS)
+* Follow/Unfollow users
+* User can upload profile picture
+* Search other users
 
 * Ruby version 2.2.4
 * Ruby version 4.2.5.1
