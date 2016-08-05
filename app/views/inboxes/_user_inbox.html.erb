@@ -11,7 +11,7 @@
     <div class="columns mbox small-12 large-12 ">
       <div class="columns small-12 main-inbox">
         <% unless current_user.received_messages.empty? %>
-            <%= render current_user.inbox %>
+            <%= render partial: "inboxes/inbox", collection: current_user.inbox %>
         <% end %>
       </div>
     </div>

@@ -91,6 +91,10 @@ class User < ActiveRecord::Base
 
   #Distinct receive messages
   def inbox
-    received_messages
+    received_messages.includes(:sender)
+  end
+
+  def avatar_url
+    self.avatar.url(:thumb)
   end
 end

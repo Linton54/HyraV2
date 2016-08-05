@@ -7,6 +7,7 @@ class Inbox < ActiveRecord::Base
  validates :sender_id, presence: true
  validates :receiver_id, presence: true
 
+ delegate :username, :avatar_url, to: :sender, prefix: true
 
  def conversations
    Message.where(inbox_id: find_sender_inbox)
@@ -15,6 +16,6 @@ class Inbox < ActiveRecord::Base
  def find_sender_inbox
    keys = Inbox.where(sender_id: receiver_id, receiver_id: sender_id).pluck(:id)
    keys << self.id
-   keys = keys.uniq
+   keys.uniq
  end
 end

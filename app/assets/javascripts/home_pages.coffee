@@ -6,3 +6,4 @@ $ ->
       names = $(this).children().attr('class').split(" ")
       theClass = names[1]
       $(".#{theClass}").css 'color', '#6ed3cf'
+

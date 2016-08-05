@@ -11,7 +11,7 @@
       <%= link_to  post.title, post_path(post) %>
     </div>
     <div class="column post-nav-content">
-      <%= truncate(post.content, length: 400, omission: '...') %>
+      <%= truncate(post.content, length: 800, omission: '...') %>
     </div>
     <div class="column post-readmore">
       <%= link_to 'Read more', post_path(post) %>

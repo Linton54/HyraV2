@@ -5,13 +5,13 @@
         <div class="columns small-3">
           <a data-close aria-label="Close reveal"><i class="fa fa-arrow-left fa-lg" aria-hidden="true"></i></a>
         </div>
-        <div class="columns small-4 text-right"> <%=  object[:inbox].sender.username %></div>
+        <div class="columns small-4 text-right"> <%= object[:inbox].sender_username %></div>
       </div>
     </div>
 
     <div class="columns cbox small-12 large-12">
       <div class="columns small-12 large-12 sender main-convo main-convo<%= object[:inbox].id %>">
-          <%= render object[:messages] , object: object[:inbox].sender.username%>
+          <%= render partial: 'messages/message', collection: object[:messages] %>
       </div>
     </div>
   </div>

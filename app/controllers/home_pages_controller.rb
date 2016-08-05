@@ -4,13 +4,12 @@ class HomePagesController < ApplicationController
   before_action :set_category, only: [:show]
 
   def home
-    @messages = user_signed_in? ? current_user.received_messages.all : User.first.received_messages.all
-    @posts = Post.all.limit(10).includes(:user) #paginate(page: params[:page], per_page: 10)
+      @posts = Post.all.limit(10).includes(:user) #paginate(page: params[:page], per_page: 10)
   end
 
   def show
     @title = set_category.upcase
-    @categories = Post.where(category: set_category)
+    @categories = Post.where(category: set_category).includes(:user)
   end
 
   private

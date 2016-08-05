@@ -31,7 +31,7 @@ FactoryGirl.define do
   factory :post do |p|
     user
     p.title { Faker::Book.title }
-    p.content { Faker::Lorem.paragraph(rand(5..20)) }
+    p.content { Faker::Lorem.paragraph(rand(15..30)) }
     category = ["Missing You", "Long Distance", "Heartbreak", "I Love You", "Happiness"]
     p.category { category.sample }
   end

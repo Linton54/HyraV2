@@ -1,10 +1,9 @@
 <a data-open="convo<%= inbox.id %>">
-  <div class="columns medium-12 small-12 large-12 inbox-body">
-    <span class="inbox-img float-left"><img src="<%= inbox.sender.avatar.url(:thumb) %>" alt="User Photo"></span>
-    <p class="inbox-username small-12 large-12"><%= inbox.sender.username %></p>
-    <p class="inbox-msg small-12 large-12"><%= truncate(inbox.messages.last.content, length: 50, omission: '...') %><span class="float-right">1 hr</span></p>
-  </div>
+    <div class="columns medium-12 small-12 large-12 inbox-body">
+      <span class="inbox-img float-left"><img src="<%= inbox.sender_avatar_url %>" alt="User Photo"></span>
+      <p class="inbox-username small-12 large-12"><%= inbox.sender_username %></p>
+      <p class="inbox-msg small-12 large-12"><%= truncate(inbox.messages.last.content, length: 50, omission: '...') %><span class="float-right">1 hr</span></p>
+    </div>
+  </a>
 
-
-</a>
-<%= render 'messages/conversation', object: { inbox: inbox, messages: inbox.conversations } %>
+  <%= render partial: 'messages/conversation', locals: { object: { inbox: inbox, messages: inbox.conversations }} %>
