@@ -2,7 +2,7 @@
   <% if current_user.following?(object) %>
         <%= button_to "Following", relationship_path(id: object), method: :delete, remote: true, class: "button tiny success" %>
   <% else %>
-        <%= button_to "Follow", relationships_path(id: object), remote: true, class: "button tiny hollow" %>
+        <%= button_to "Follow", relationships_path(id: object), remote: true, class: "button tiny hollow success" %>
   <% end %>
 <% else %>
   <%= link_to "Edit Profile", edit_user_registration_path(object) , class: "button tiny secondary profile-edit-button" %>

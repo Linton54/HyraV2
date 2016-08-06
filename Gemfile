@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rack-mini-profiler'
+#gem 'rack-mini-profiler'
 gem 'jquery-ui-rails'
 gem 'aws-sdk'
 gem 'devise', '~> 4.1', '>= 4.1.1'

@@ -1,7 +1,7 @@
 <div class="row random-users">
     <div class="columns large-12 small-12 medium-12">
       <div class="columns small-8 medium-8 large-8 text-left">
-        <img class="thumbnail" src="<%= user.avatar.url(:thumb) %>" alt="User Photo">
+        <img class="thumbnail" src="<%= user.avatar_url(:thumb) %>" alt="User Photo">
         <span class=""><%= link_to  user.username, user_path(user.username) %></span>
       </div>
 

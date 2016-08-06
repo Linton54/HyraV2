@@ -13,6 +13,10 @@ module ApplicationHelper
     current_user == user ? true : false
   end
 
+  def str_free(str)
+    str.gsub(/\W/, '')
+  end
+
   #This allows registration to be placed anywhere in the views
   def resource_name
     :user

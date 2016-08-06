@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
   #User Avatar
   has_attached_file :avatar, styles: {thumb: "150x150"},
                     default_url: "https://s3.amazonaws.com/images-hyra/user_default.png"
-  #default_url: "https://s3.amazonaws.com/hyraweb/user.png"
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment_size :avatar, :less_than => 2.megabytes
@@ -95,6 +94,10 @@ class User < ActiveRecord::Base
   end
 
   def avatar_url
-    self.avatar.url(:thumb)
+    avatar.url(:thumb)
+  end
+
+  def profile_background_avatar_url
+    profile_background_avatar.url(:large)
   end
 end

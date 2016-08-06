@@ -9,6 +9,14 @@ class Inbox < ActiveRecord::Base
 
  delegate :username, :avatar_url, to: :sender, prefix: true
 
+ def newest_message_content
+   self.messages.last.content
+ end
+
+ def newest_message_time
+   self.messages.last.created_at
+ end
+
  def conversations
    Message.where(inbox_id: find_sender_inbox)
  end

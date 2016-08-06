@@ -2,7 +2,7 @@
 
 <div class="row align-center text-center">
   <div class="columns small-12 large-7 medium-7 profile">
-    <div class="profile-background-img" data-interchange="[<%= @user.profile_background_avatar.url(:small) %>, small], [<%= @user.profile_background_avatar.url(:medium) %>, medium], [<%= @user.profile_background_avatar.url(:large) %>, large]">
+    <div class="profile-background-img" data-interchange="[<%= @user.profile_background_avatar_url %>, small], [<%= @user.profile_background_avatar_url %>, medium], [<%= @user.profile_background_avatar_url %>, large]">
       <div class="columns text-right fue-button" id="fue-button<%= @user.id %>">
         <%= render 'relationships/relationships_form', object: @user %>
       </div>
@@ -10,15 +10,15 @@
       <div class="columns large-12 small-12 profile-attr">
         <div class="row text-center align-right">
           <div class="columns small-3 large-3 user-posts">
-            <span id="user-posts">0</span>
+            <span id="user-posts"><%= @user.posts.size %></span>
             <h6>Posts</h6>
           </div>
           <div class="columns small-3 large-3">
-            <span id="user-followers"><%= @user.followers.count %></span>
+            <span id="user-followers"><%= @user.followers.size %></span>
             <h6>Followers</h6>
           </div>
           <div class="columns small-3 large-3">
-            <span id="user-following"><%= @user.following.count %></span>
+            <span id="user-following"><%= @user.following.size %></span>
             <h6>Following</h6>
           </div>
         </div>
@@ -29,12 +29,17 @@
 
     <div class="columns">
         <div class="columns large-4 small-4 text-right profile-img">
-          <img class="thumbnail" src="<%= @user.avatar.url(:thumb) %>" alt="User Photo">
+          <img class="thumbnail" src="<%= @user.avatar_url %>" alt="User Photo">
         </div>
         <div class="columns large-8 small-8 text-left profile-username">
           <span class=""><%= @user.username%></span>
-          <small><%= link_to 'Signout', destroy_user_session_path, method: :delete, class: "float-right show-for-small-only" %></small>
+          <small><%= link_to 'Signout', destroy_user_session_path, method: :delete, class: "float-right show-for-small-only" if real_current_user?(@user) %></small>
         </div>
-      </div>
+    </div>
   </div>
 </div>
+
+<div class="row align-center" id="posts">
+  <%= render @posts %>
+</div>
+
