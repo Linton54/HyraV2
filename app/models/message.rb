@@ -1,5 +1,5 @@
 class Message < ActiveRecord::Base
-  belongs_to :inbox, counter_cache:  true
+  belongs_to :inbox
 
   validates :content, presence: true
   validates :recipient, presence: true

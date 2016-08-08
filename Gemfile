@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.4'
+
 #gem 'rack-mini-profiler'
 gem 'jquery-ui-rails'
 gem 'aws-sdk'
@@ -29,7 +31,6 @@ end
 
 group :test, :development do
   gem "faker"
-  gem 'guard-livereload', '~> 2.5', require: false
   gem "rspec-rails"
 end
 

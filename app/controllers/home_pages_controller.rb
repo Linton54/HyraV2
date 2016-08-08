@@ -4,7 +4,7 @@ class HomePagesController < ApplicationController
   before_action :set_category, only: [:show]
 
   def home
-      @posts = Post.all.limit(10).includes(:user) #paginate(page: params[:page], per_page: 10)
+    @posts = Post.all.limit(10).includes(:user) #paginate(page: params[:page], per_page: 10)
   end
 
   def show

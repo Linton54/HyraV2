@@ -40,6 +40,10 @@
 </div>
 
 <div class="row align-center" id="posts">
-  <%= render @posts %>
+  <% if @posts.empty? %>
+    <div class="callout primary">No post posted!</div>
+  <% else %>
+    <%= render @posts%>
+  <% end %>
 </div>
 

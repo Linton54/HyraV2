@@ -71,13 +71,8 @@ class User < ActiveRecord::Base
 
   #Inbox is unique
   #sender receiver
-  def sr_inbox_exists?(sender, receiver)
+  def inbox_exists?(sender, receiver)
     Inbox.exists?(sender_id: sender.id, receiver_id: receiver.id)
-  end
-
-  #receiver sender
-  def rs_inbox_exists?(sender, receiver)
-    Inbox.exists?(receiver_id: sender.id, sender_id: receiver.id)
   end
 
   def find_inbox(sender, receiver)

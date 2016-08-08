@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160710212319) do
+ActiveRecord::Schema.define(version: 20160807211219) do
 
   create_table "inboxes", force: :cascade do |t|
     t.integer  "sender_id"
@@ -85,6 +85,9 @@ ActiveRecord::Schema.define(version: 20160710212319) do
     t.string   "profile_background_avatar_content_type"
     t.integer  "profile_background_avatar_file_size"
     t.datetime "profile_background_avatar_updated_at"
+    t.integer  "posts_count",                            default: 0
+    t.integer  "following_count"
+    t.integer  "followers_count"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

@@ -43,4 +43,16 @@ describe Post, type: :model do
     expect(Post.first).to eq(new)
     expect(Post.last).to eq(old)
   end
+
+  it "#user_username" do
+    user = build(:user, username: "marv")
+    post = build(:post, user: user)
+    expect(post.user_username).to eq("marv")
+  end
+
+  it "#user_avatar_url" do
+    user = build(:user)
+    post = build(:post, user: user)
+    expect(post.user_avatar_url).to eq(user.avatar_url)
+  end
 end

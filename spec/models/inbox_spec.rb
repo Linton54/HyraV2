@@ -44,12 +44,38 @@ RSpec.describe Inbox, type: :model do
   it "should return the only messages between sender == receiver" do
     inbox = create(:inbox, sender_id: 1, receiver_id: 1)
 
-    message1 = create(:message, inbox_id: inbox.id)
-    message2 = create(:message, inbox_id: inbox.id)
+    create(:message, inbox_id: inbox.id)
+    create(:message, inbox_id: inbox.id)
 
     expect(inbox.find_sender_inbox).to eq([inbox.id])
     inbox.conversations.each do |msg|
       expect(msg.inbox_id).to eq(inbox.id)
     end
+  end
+
+  it "inbox sender #username" do
+    user = create(:user, username: "Tinder")
+    inbox = create(:inbox, sender_id: user.id)
+    expect(inbox.sender_username).to eq("Tinder")
+  end
+
+  it "inbox sender #avatar_url" do
+    user = create(:user)
+    inbox = create(:inbox, sender_id: user.id)
+    expect(inbox.sender_avatar_url).to eq(user.avatar_url)
+  end
+
+  it "#newest_messages_content" do
+    inbox = create(:inbox)
+    message1 = create(:message, inbox_id: inbox.id)
+    message2 = create(:message, inbox_id: inbox.id)
+    expect(inbox.newest_message_content).to eq(message2.content)
+  end
+
+  it "#newest_message_time" do
+    inbox = create(:inbox)
+    message1 = create(:message, inbox_id: inbox.id)
+    message2 = create(:message, inbox_id: inbox.id)
+    expect(inbox.newest_message_time).to eq(message2.created_at)
   end
 end

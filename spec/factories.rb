@@ -1,13 +1,13 @@
 FactoryGirl.define do
 
   factory :message do |m|
-    inbox
     m.content { Faker::Lorem.paragraph(rand(1..5)) }
     m.recipient { Faker::Name.first_name }
     m.inbox_id { rand(1..50) }
   end
 
   factory :inbox do |i|
+
     i.sender_id { rand(1..1000) }
     i.receiver_id { rand(1001..2000) }
 

@@ -5,6 +5,6 @@
       <p class="inbox-msg small-12 large-12"><%= truncate(inbox.newest_message_content, length: 50, omission: '...') %>
       <span class="float-right"><%= time_ago_in_words(inbox.newest_message_time) %></p></span></p>
     </div>
-  </a>
+</a>
 
-  <%= render partial: 'messages/conversation', locals: { object: { inbox: inbox, messages: inbox.conversations }} %>
+<%= render partial: 'messages/conversation', locals: { object: { inbox: inbox, messages: inbox.conversations }} %>
