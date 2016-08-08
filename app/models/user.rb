@@ -53,6 +53,8 @@ class User < ActiveRecord::Base
 
   #Relationship Methods
   def follow(other_user)
+    User.increment_counter(:following_count, self.id)
+    User.increment_counter(:followers_count, other_user.id)
     following_relationships.create(followed_id: other_user.id)
   end
 
@@ -61,6 +63,8 @@ class User < ActiveRecord::Base
   end
 
   def unfollow(other_user)
+    User.decrement_counter(:following_count, self.id)
+    User.decrement_counter(:followers_count, other_user.id)
     following_relationships.find_by(followed_id: other_user.id).destroy
   end
 

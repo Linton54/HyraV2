@@ -4,8 +4,8 @@ class RelationshipsController < ApplicationController
 
   def create
     current_user.follow(@user)
+    @user.reload
     respond_to do |format|
-      format.html { redirect_to user_url(id: @user.username) }
       format.js
     end
 
@@ -13,8 +13,8 @@ class RelationshipsController < ApplicationController
 
   def destroy
     current_user.unfollow(@user)
+    @user.reload
     respond_to do |format|
-      format.html { redirect_to user_url(id: @user.username) }
       format.js
     end
   end
