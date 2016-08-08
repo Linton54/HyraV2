@@ -86,8 +86,8 @@ ActiveRecord::Schema.define(version: 20160807211219) do
     t.integer  "profile_background_avatar_file_size"
     t.datetime "profile_background_avatar_updated_at"
     t.integer  "posts_count",                            default: 0
-    t.integer  "following_count"
-    t.integer  "followers_count"
+    t.integer  "following_count",                        default: 0
+    t.integer  "followers_count",                        default: 0
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
