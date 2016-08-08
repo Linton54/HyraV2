@@ -16,9 +16,9 @@
         <div class="column large-8  medium-9">
           <% if user_signed_in? %>
               <a href="<%= users_path %>"><i class="fa fa-connectdevelop" aria-hidden="true"></i></a>
-              /
-              <a data-toggle="inbox"><i class="fa fa-inbox" aria-hidden="true"></i></a>
-              <%= render 'inboxes/user_inbox' %>
+              <!-- /
+             <a data-toggle="inbox"><i class="fa fa-inbox" aria-hidden="true"></i></a>
+              <%#= render 'inboxes/user_inbox' %>-->
               /
               <small class="nav-world"><%= link_to 'Write a letter', posts_path %></small>
               /
