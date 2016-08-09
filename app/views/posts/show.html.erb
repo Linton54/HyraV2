@@ -14,7 +14,7 @@
             <i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>
             <span>12</span>
             <i class="fa fa-comments-o fa-lg" aria-hidden="true"></i>
-            <span>12</span>
+            <span><%= @post.comments.size %></span>
           </div>
           <div class="column text-right">
             <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>
@@ -33,5 +33,14 @@
         <div class="column small-12 medium-12 large-12 show-post-time"><%= time_ago_in_words(@post.created_at) %></div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Comment -->
+<div class="row align-center">
+  <div class="column large-8 medium-10 small-10 comment-post">
+
+    <h6 class="comment-header">Comments</h6>
+    <%= react_component 'CommentBox', { comments_path: post_comments_path(@post), post_id: @post.id, current_id: current_user.id } %>
   </div>
 </div>

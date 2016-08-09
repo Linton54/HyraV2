@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 ruby '2.2.4'
 
-#gem 'rack-mini-profiler'
+gem 'react-rails'
+gem 'ruby_dep', "1.3.1"
+gem 'rack-mini-profiler'
 gem 'jquery-ui-rails'
 gem 'aws-sdk'
 gem 'devise', '~> 4.1', '>= 4.1.1'

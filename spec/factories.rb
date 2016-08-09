@@ -1,5 +1,12 @@
 FactoryGirl.define do
 
+  factory :comment do |c|
+    c.content { Faker::Lorem.paragraph(rand(1..2)) }
+    c.commentable_id { rand(1..50) }
+    c.commentable_type { "Post" }
+    c.user_id { rand(1..10) }
+  end
+
   factory :message do |m|
     m.content { Faker::Lorem.paragraph(rand(1..5)) }
     m.recipient { Faker::Name.first_name }

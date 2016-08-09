@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160807211219) do
+ActiveRecord::Schema.define(version: 20160809202121) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "inboxes", force: :cascade do |t|
     t.integer  "sender_id"
@@ -41,8 +53,9 @@ ActiveRecord::Schema.define(version: 20160807211219) do
     t.text     "content"
     t.string   "category"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "comments_count", default: 0
   end
 
   add_index "posts", ["created_at", "category"], name: "index_posts_on_created_at_and_category"

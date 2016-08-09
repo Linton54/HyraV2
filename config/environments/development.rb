@@ -44,4 +44,6 @@ Rails.application.configure do
 
   #Paperclip
   Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin'
+
+  config.react.addons = true # defaults to false
 end

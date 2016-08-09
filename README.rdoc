@@ -7,10 +7,12 @@ lot to learn, and i will contrinue improving. Check out the app: (https://still-
 
 ===Functionality
 * Mobile Friendly
+* User can comment to post/delete
+  ====I used react to implement the functionality for comments add/delete
 * User can register/login
 * User can create posts
 * Used Devise Confirmable to confirm registration via email
-* Send Messages to other users (users must reload the page to view the image, reason why i learn React.JS)
+* User can comment to user's post
 * Follow/Unfollow users
 * User can upload profile picture
 * Search other users
@@ -19,7 +21,11 @@ lot to learn, and i will contrinue improving. Check out the app: (https://still-
 
 * Ruby version 2.2.4
 * Ruby version 4.2.5.1
-* Gem used: foundation, jquery-rails, aws-sdk, paperclip, font-awesome-rails, devise, bullet
+* Gem used: foundation, jquery-rails, aws-sdk, paperclip, font-awesome-rails, devise, bullet, react-rails
 
 * TestingGem used: rspec-rails, factory_girl_rails, capybara
 * Testing helper Gem used: factory_girl_rails, capybara, faker
+
+===Refractor
+* used delegate to decouple models (demeter law) it enables to models to test easier
+* counter_cache to retrieve posts, followers, and following counts.

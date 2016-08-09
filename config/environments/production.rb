@@ -102,4 +102,6 @@ Rails.application.configure do
           s3_region: ENV.fetch('AWS_REGION'),
       }
   }
+
+  config.react.addons = true # defaults to false
 end

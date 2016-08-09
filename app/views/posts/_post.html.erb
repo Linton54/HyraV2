@@ -24,6 +24,11 @@
   <div class="row column post-loveit">
     <i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>
     <span class="love-count">10</span>
+
+    <%= link_to post, class: "float-right" do %>
+        <i class="fa fa-comments-o fa-lg" aria-hidden="true"></i>
+        <%= post.comments.size %>
+    <% end %>
   </div>
 </article>
 

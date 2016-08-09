@@ -23,6 +23,9 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :profile_background_avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment_size :profile_background_avatar, :less_than => 2.megabytes
 
+  #Comments
+  has_many :comments, dependent: :destroy
+
   #Messages
   has_many :sent_messages, class_name: "Inbox", foreign_key: "sender_id", dependent: :destroy
   has_many :received_messages, class_name: "Inbox", foreign_key: "receiver_id", dependent: :destroy
