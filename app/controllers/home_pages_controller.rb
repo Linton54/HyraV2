@@ -1,4 +1,6 @@
 class HomePagesController < ApplicationController
+  include HomePagesHelper
+
   before_action :authenticate_user!, except: [:home]
   before_action :check_user, only: [:home]
   before_action :set_category, only: [:show]
@@ -21,19 +23,5 @@ class HomePagesController < ApplicationController
   def set_category
     arry = %w[Heartbreak Happiness]
     arry.include?(params[:category]) ? params[:category] : humanize_url(params[:category])
-  end
-
-  #Humanize category in the url
-  #/category/ILoveYou instead of
-  # /category/I20%Love20%You
-  def humanize_url(category)
-      case category
-        when "ILoveYou"
-           "I Love You"
-        when "LongDistance"
-           "Long Distance"
-        else
-          "Missing You"
-      end
   end
 end

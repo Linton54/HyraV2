@@ -21,7 +21,7 @@ var CommentForm = React.createClass({
 
     render: function(){
         return (
-                <form className="commentForm" onSubmit={this.handleSubmit}>
+                <form data-remote="true" className="commentForm" onSubmit={this.handleSubmit}>
                     <textarea id="comment_content" rows="3" type="text" placeholder="Comment..." value={this.state.content} onChange={this.handleContentChange}/>
                     <input id="submit-comment" className="primary hollow button float-right" type="submit" value="Post"/>
                 </form>

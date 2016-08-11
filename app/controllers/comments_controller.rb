@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.json { render json: @comment }
+        format.js
       end
     end
   end
@@ -22,6 +23,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.destroy
         format.json { render json: @post.comments }
+        format.js
       end
     end
   end

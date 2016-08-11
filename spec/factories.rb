@@ -36,11 +36,12 @@ FactoryGirl.define do
   end
 
   factory :post do |p|
-    user
     p.title { Faker::Book.title }
     p.content { Faker::Lorem.paragraph(rand(15..30)) }
     category = ["Missing You", "Long Distance", "Heartbreak", "I Love You", "Happiness"]
     p.category { category.sample }
+    p.user_id { rand(1..1000) }
+    user
   end
 
   factory :user do |f|
@@ -49,6 +50,7 @@ FactoryGirl.define do
     f.email { Faker::Internet.safe_email(username) }
     f.password { "password" }
     f.password_confirmation { "password" }
+    f.confirmed_at Date.today
 
     factory :user_with_inboxes do
       transient do

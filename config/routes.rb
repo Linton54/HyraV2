@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+
   root 'home_pages#home'
+  resources :home_pages, as: 'category', path: 'category', param: :category, only: [:show, :home]
 
   devise_for :users
-  resources :home_pages, as: 'category', path: 'category', param: :category, only: [:show, :home]
   resources :users, only: [:show, :index]
   resources :posts do
     resources :comments, only: [:create, :destroy, :index]

@@ -14,7 +14,7 @@ var Comment = React.createClass({
 
         return  <div className="comment">
                     <div className="row">
-                        <div className="columns large-12">
+                        <div className="columns large-12 small-12 medium-12">
                             <div className="uut-comment">
                                 {deleteOption}
                                 <div className="uimg-comment">
