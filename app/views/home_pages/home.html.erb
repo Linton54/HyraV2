@@ -1,10 +1,17 @@
 <%#= javascript_include_tag params[:controller] %>
 <% provide(:title, "Hyra") %>
 
-<div class="row align-center" id="posts">
+<div class="row content-wraper-home large-8  align-center" id="posts">
   <% if @posts.empty? %>
       <div class="callout primary">No post posted!</div>
   <% else %>
-      <%= render @posts%>
+     <div class="column large-8 medium-8 post-wrapper">
+        <%= render @posts%>
+     </div>
   <% end %>
+
+  <div class="column large-4 medium-4 hide-for-small-only hide-for-medium-only section-wrapper">
+      ddadsa
+  </div>
 </div>
+

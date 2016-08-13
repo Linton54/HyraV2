@@ -1,10 +1,10 @@
-<article class="column small-12 large-7 main-post">
+<div class="column small-12 large-12 medium-12 main-post">
   <div class="row column post-nav">
     <img class="thumbnail" src="<%= post.user_avatar_url %>" alt="User Photo">
     <span class="post-nav-username"><%= link_to  post.user_username, user_path(post.user_username) %></span>
-    <span class="post-nav-in">in</span>
+    <span class="post-nav-in">on</span>
     <span class="post-nav-cate"><%= link_to  post.category, category_path(str_free(post.category)) %></span>
-    <span class="float-right post-nav-time"><%= time_ago_in_words(post.created_at) %></span>
+    <span class="float-right post-nav-time"><%= time_ago_in_words(post.created_at) %> ago</span>
   </div>
   <div class="row column post-body">
     <div class="column post-title">
@@ -30,7 +30,7 @@
         <%= post.comments.size %>
     <% end %>
   </div>
-</article>
+</div>
 
 <div class="tiny reveal post-dr" id="post-options<%= post.id %>" data-reveal="3rsr2w-reveal" role="dialog" aria-hidden="false" data-yeti-box="exampleModal5" data-resize="exampleModal5" style="display: block; top: 112px;" tabindex="-1" data-events="resize">
   <ul class="no-bullet text-center">

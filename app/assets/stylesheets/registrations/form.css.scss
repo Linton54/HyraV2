@@ -5,10 +5,6 @@ $font-sen: 'Assistant', sans-serif;
   .show-for-medium-up {
     display: none !important; } }
 
-.registration-main {
-
- }
-
 //make this global
 .form-setting{
   height: 30px;
@@ -60,6 +56,6 @@ $font-sen: 'Assistant', sans-serif;
 
 @media screen and (max-width: 640px)  {
   .form-register {
-    margin-top: 50px;
+    margin-top: 0;
   }
 }

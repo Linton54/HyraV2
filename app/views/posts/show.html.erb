@@ -1,4 +1,4 @@
-<div class="row align-center">
+<div class="row align-center content-wraper-home">
   <div class="column large-8 small-12 show-post">
     <div class="row">
       <div class="column small-12 medium-12 large-12 post-title"><%= @post.title %></div>
@@ -14,7 +14,7 @@
             <i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>
             <span>12</span>
             <i class="fa fa-comments-o fa-lg" aria-hidden="true"></i>
-            <span><%= @post.comments.size %></span>
+            <span id="comment-count"><%= @post.comments.size %></span>
           </div>
           <div class="column text-right">
             <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>
@@ -37,7 +37,7 @@
 </div>
 
 <!-- Comment -->
-<div class="row align-center">
+<div class="row align-center content-wraper">
   <div class="column large-8 medium-11 small-11 comment-post">
 
     <h6 class="comment-header">Comments</h6>

@@ -8,13 +8,12 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @post.comments.build(comment_params)
-    @comment.user_id = current_user.id
+    comment = @post.comments.build(comment_params)
+    comment.user_id = current_user.id
 
     respond_to do |format|
-      if @comment.save
-        format.json { render json: @comment }
-        format.js
+      if comment.save
+        format.json { render json: @post.comments }
       end
     end
   end
@@ -23,7 +22,6 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.destroy
         format.json { render json: @post.comments }
-        format.js
       end
     end
   end

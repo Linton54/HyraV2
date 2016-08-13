@@ -49,6 +49,12 @@ class User < ActiveRecord::Base
   #retrieve user except current_user
   scope :all_except, ->(user, count) { where.not(id: (user.following.ids << user.id) ).limit(count) }
 
+  #folliwng posts
+  def following_posts
+    ids = following.ids << id
+    Post.where(user_id: ids).includes(:user)
+  end
+
   #User Methods
   def find_user_by_username(user)
     User.find_by(username: user)
@@ -73,7 +79,7 @@ class User < ActiveRecord::Base
 
   #Search user
   def self.terms_for(prefix)
-    where("username like?", prefix + "%").limit(10).pluck(:username)
+   where(["username LIKE ?", "#{prefix}%"]).limit(10).pluck(:username)
   end
 
   #Inbox is unique
@@ -96,7 +102,7 @@ class User < ActiveRecord::Base
   end
 
   def avatar_url
-    avatar.url(:thumb)
+    avatar(:thumb)
   end
 
   def profile_background_avatar_url

@@ -13,7 +13,9 @@ var CommentBox = React.createClass({
     },
 
     loadCommentsFromServer: function() {
-        $.getJSON(this.props.comments_path, (data) => this.setState({ comments: data }))
+        $.getJSON(this.props.comments_path, (data) => { this.setState({ comments: data }),
+            $('#comment-count').text(data.length)
+        })
     },
 
     componentWillMount: function() {
@@ -32,7 +34,8 @@ var CommentBox = React.createClass({
             type: 'POST',
             data: comment,
             success: function(data) {
-                this.setState({comments: this.state.comments.concat(data)});
+                $('#comment-count').text(data.length)
+                this.setState({comments: data});
             }.bind(this),
             error: function(xhr, status, err) {
                 console.error(this.props.url, status, err.toString());
@@ -47,6 +50,7 @@ var CommentBox = React.createClass({
             type: 'DELETE',
             data: comment,
             success: function(data) {
+                $('#comment-count').text(data.length)
                 this.setState({comments: data});
             }.bind(this),
             error: function(xhr, status, err) {

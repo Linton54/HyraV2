@@ -1,14 +1,20 @@
 $post-title-color: #6ed3cf;
 
+.post-wrapper {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .main-post {
   background-color: white;
-  border: 1px #efefef solid;
+  //border: 1px #efefef solid;
   border-radius: 3px;
-  box-shadow: 0 0 0 1px rgba(0,0,0,.04);
+  box-shadow: 0 0 0 1px rgba(0,0,0,.10);
   font-size: smaller;
   color: #3f3f3f;
   margin-bottom: 30px;
   //margin: 0 0 50px 0;
+  position: relative;
 
   .post-nav {
     padding: 14px 0 14px 0;
@@ -45,7 +51,7 @@ $post-title-color: #6ed3cf;
     }
 
     .post-nav-time {
-      color: #bababa;
+      color: #bbb;
       font-size: smaller;
       padding-top: 10px;
     }
@@ -54,9 +60,8 @@ $post-title-color: #6ed3cf;
   .post-title{
     padding-left: 0;
     font-size: 24px;
-    font-weight: bold;
       a{
-        color: hsla(0, 0%, 0%, 0.8);
+        color: #3f3f3f;
       }
   }
 
@@ -101,6 +106,12 @@ $post-title-color: #6ed3cf;
   }
 }
 
+.section-wrapper {
+  padding-right: 0;
+  display: block;
+  position: relative;
+}
+
 .reveal {
   li {
     padding: 5px;
@@ -109,6 +120,7 @@ $post-title-color: #6ed3cf;
 }
 
 @media only screen and (max-width: 640px) {
+
   .post-dr {
     overflow: hidden;
     top: 450px !important;

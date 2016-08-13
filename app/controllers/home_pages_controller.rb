@@ -1,12 +1,16 @@
 class HomePagesController < ApplicationController
   include HomePagesHelper
 
-  before_action :authenticate_user!, except: [:home]
   before_action :check_user, only: [:home]
   before_action :set_category, only: [:show]
 
   def home
-    @posts = Post.all.limit(10).includes(:user) #paginate(page: params[:page], per_page: 10)
+    user_signed_in? ? @posts = current_user.following_posts : @posts = Post.all.limit(10).includes(:user)
+    #paginate(page: params[:page], per_page: 10)
+  end
+
+  def index
+
   end
 
   def show
@@ -21,7 +25,7 @@ class HomePagesController < ApplicationController
   end
 
   def set_category
-    arry = %w[Heartbreak Happiness]
+    arry = %w[Love Apology Farewell]
     arry.include?(params[:category]) ? params[:category] : humanize_url(params[:category])
   end
 end

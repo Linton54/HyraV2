@@ -17,11 +17,6 @@ describe HomePagesController, type: :controller do
 
   describe "#Show" do
 
-    it "should redirect when not logged in" do
-      get :show, category: "Life"
-      expect(response).to redirect_to(new_user_session_path)
-    end
-
     it "should return categories count" do
       login_user
       arry = create_list(:post, 3, category: "I Love You")

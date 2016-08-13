@@ -5,12 +5,8 @@ module HomePagesHelper
   # /category/I20%Love20%You
   def humanize_url(category)
     case category
-      when "ILoveYou"
-        "I Love You"
-      when "LongDistance"
-        "Long Distance"
-      else
-        "Missing You"
+      when "ThankYou"
+        "Thank You"
     end
   end
 end

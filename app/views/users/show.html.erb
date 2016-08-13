@@ -1,6 +1,6 @@
 <% provide(:title, "@#{@user.username}") %>
 
-<div class="row align-center text-center">
+<div class="row align-center text-center content-wraper-home">
   <div class="columns small-12 large-7 medium-7 profile">
     <div class="profile-background-img" data-interchange="[<%= @user.profile_background_avatar_url %>, small], [<%= @user.profile_background_avatar_url %>, medium], [<%= @user.profile_background_avatar_url %>, large]">
       <div class="columns text-right fue-button" id="fue-button<%= @user.id %>">
@@ -9,7 +9,7 @@
 
       <div class="columns large-12 small-12 profile-attr">
         <div class="row text-center align-right">
-          <div class="columns small-3 large-3 user-posts">
+          <div class="columns small-3 large-3">
             <span id="user-posts<%= @user.id %>"><%= @user.posts.size %></span>
             <h6>Posts</h6>
           </div>
@@ -39,11 +39,12 @@
   </div>
 </div>
 
-<div class="row align-center" id="posts">
+<div class="row align-center user-posts">
   <% if @posts.empty? %>
     <div class="callout primary">No post posted!</div>
   <% else %>
-    <%= render @posts%>
+     <div class="column large-7 medium-7 small-12 post-wrapper">
+       <%= render @posts%>
+     </div>
   <% end %>
 </div>
-

@@ -1,36 +1,37 @@
 <div class="top-bar hide-for-small-only">
-    <nav class="column row large-8">
-      <div class="column large-4 medium-3">
-        <div class="top-bar-title"><h4 class="subheader"><strong><%= link_to 'Hyra', root_path %></strong></h4></div>
-        <% if user_signed_in? %>
-          <a href="<%= root_path %>"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a>
-        <% end %>
+    <nav class="row large-8 medium-10 small-12 top-bar-nav">
+      <div class="logo-wrapper">
+        <strong><%= link_to 'Hyra', root_path %></strong>
       </div>
 
-      <div class="column large-8  medium-9 nav-link text-right">
-        <div class="column large-4 medium-3">
+      <div class="column large-7 medium-7 small-7 categories">
+        <ul class="no-bullet nav-category">
+          <li><%= link_to 'Love', category_path(category: "Love")%></li>
+          <li><%= link_to 'Apology', category_path(category: "Apology")%></li>
+          <li><%= link_to 'Thank You', category_path(category: "ThankYou")%></li>
+          <li><%= link_to 'Farewell', category_path(category: "Farewell")%></li>
+        </ul>
+      </div>
+
+      <div class="column large-5 medium-5 small-5 text-right categories">
+        <ul class="no-bullet nav-category">
           <% if user_signed_in? %>
-              <input class="nav-search" type="text" placeholder="search">
-          <% end %>
-        </div>
-        <div class="column large-8  medium-9">
-          <% if user_signed_in? %>
-              <a href="<%= users_path %>"><i class="fa fa-connectdevelop" aria-hidden="true"></i></a>
+              <li>
+                 <%= link_to users_path do %>
+                    <i class="fa fa-connectdevelop" aria-hidden="true"></i>
+                  <% end %>
+              </li>
               <!-- /
              <a data-toggle="inbox"><i class="fa fa-inbox" aria-hidden="true"></i></a>
               <%#= render 'inboxes/user_inbox' %>-->
-              /
-              <small class="nav-world"><%= link_to 'Write a letter', posts_path %></small>
-              /
-              <small class="nav-profile"><%= link_to 'Profile', user_path(current_user.username) %></small>
-              /
-              <small class="nav-signout"><%= link_to 'Signout', destroy_user_session_path, method: :delete %></small>
+              <li><%= link_to 'Write a letter', posts_path %></li>
+              <li><%= link_to 'Profile', user_path(current_user.username) %></li>
+              <li><%= link_to 'Signout', destroy_user_session_path, method: :delete %></li>
           <% else %>
-              <small class="nav-login"><%= link_to 'Log in', new_user_session_path  %></small>
-              /
-              <small class="nav-login"><%= link_to 'Sign up', new_user_registration_path %></small>
+              <li><%= link_to 'Log in', new_user_session_path  %></li>
+              <li><%= link_to 'Sign up', new_user_registration_path %></li>
           <% end %>
-        </div>
+        </ul>
       </div>
     </nav>
 </div>

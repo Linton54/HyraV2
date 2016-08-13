@@ -1,35 +1,32 @@
 $logo-color: #6ed3cf;
-$background-color: #fafafa;
-$loginregister-color: #404040;
+$background-color: white;//#fafafa;
+$loginregister-color: #bbb;
 
 .top-bar {
-  margin-top: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  position: fixed;
   background-color: $background-color;
   padding: 0px;
-  //border-bottom: 1px #dbdbdb solid;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.10);
   margin-bottom: 30px;
 
-  strong a{
-    font-family: 'Yellowtail', cursive;
-    color: $logo-color;
+  .top-bar-nav {
+    position: relative;
   }
 
-  a{
-    color: $loginregister-color;
-     .fa-home{
-       margin-top: 15px;
-    }
-  }
+  .logo-wrapper{
+    position: absolute;
+    display: block;
+    z-index: 100;
+    margin-right: 0;
 
-
-  .nav-link {
-    line-height: 2.3em;
-    a {
-      color: black;
-    }
-
-    a:hover {
-      border-bottom: 1px black solid;
+    strong a{
+      font-size: 45px;
+      font-family: 'Yellowtail', cursive;
+      color: $logo-color;
     }
   }
 
@@ -39,4 +36,40 @@ $loginregister-color: #404040;
     font-size: 12px;
     border-radius: 5px;
   }
+
+  .categories {
+    height: 75px;
+    padding: 28px 0 0 110px;
+    ul {
+        margin: 0;
+        background-color: inherit;
+        font-size: 14px;
+
+      li {
+        color: #999;
+        padding-left: 10px;
+        margin: 0;
+        display: inline;
+
+      }
+    }
+
+    a{
+      color: $loginregister-color;
+
+      &:hover {
+        color: #555;
+      }
+    }
+
+  }
+
+  .love-category {
+    margin-bottom: 20px;
+  }
+}
+
+.activeNav{
+  color: #555 !important;
+  border-bottom: 2px #6ed3cf solid;
 }

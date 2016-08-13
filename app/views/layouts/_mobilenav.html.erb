@@ -3,8 +3,21 @@
     <% if user_signed_in? %>
       <div class="columns mobile-nav-icon">
         <a href="<%= root_path %>">
-          <i class="fa fa-nav-home fa-home fa-2x " aria-hidden="true"></i>
+          <i class="fa fa-nav-home fa-home fa-2x" aria-hidden="true"></i>
         </a>
+      </div>
+      <div class="columns">
+        <a data-toggle="categories-dropdown">
+          <i class="fa fa-list-ul fa-2x" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-pane" id="categories-dropdown" data-dropdown data-auto-focus="true">
+          <ul class="no-bullet">
+            <li><%= link_to 'Love', category_path(category: "Love")%></li>
+            <li><%= link_to 'Apology', category_path(category: "Apology")%></li>
+            <li><%= link_to 'Thank You', category_path(category: "ThankYou")%></li>
+            <li><%= link_to 'Farewell', category_path(category: "Farewell")%></li>
+          </ul>
+        </div>
       </div>
       <div class="columns mobile-nav-icon">
         <a href="<%= users_path %>">

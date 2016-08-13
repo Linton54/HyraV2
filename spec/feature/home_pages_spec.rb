@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "HomePages", type: [:feature, :userhelper] do
+feature "HomePages", type: [:feature, :userhelper, :controller] do
 
   let(:user) { create(:user_with_posts) }
 
@@ -16,6 +16,7 @@ feature "HomePages", type: [:feature, :userhelper] do
   scenario "User log in" do
     user.confirm #confirm email address
     log_in(user)
+    p current_user
     page.assert_selector('a', text: 'Write a letter')
     page.assert_selector('a', text: 'Profile')
     page.assert_selector('a', text: 'Signout')

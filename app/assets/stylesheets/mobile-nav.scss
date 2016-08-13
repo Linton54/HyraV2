@@ -8,6 +8,7 @@ $nav-control-color: #0a0a0a;
     background-color: white;
     width: 100% !important;
     opacity: 0.9;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 
     .mobile-nav-icon {
       .fa-home   { color: $nav-control-color }
@@ -16,6 +17,18 @@ $nav-control-color: #0a0a0a;
       .fa-user   { @extend .fa-home }
       .fa-pencil { @extend .fa-home }
     }
+  }
+}
+
+
+.fa-list-ul {
+  color: $nav-control-color
+}
+
+.dropdown-pane {
+  opacity: 1 !important;
+  a {
+    color: #bbb;
   }
 }
 

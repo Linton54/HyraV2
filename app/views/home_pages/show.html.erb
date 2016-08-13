@@ -1,7 +1,21 @@
-<div class="row align-center">
-  <div class="column small-12 large-7 category-title"><%= @title %></div>
-  <%= render @categories, as: :post || "There are no posts available." %>
+
+<div class="row large-12 medium-12 topic-cover-img"  data-interchange="[https://s3.amazonaws.com/images-hyra/<%= str_free(@title.downcase) %>.jpg, small], [https://s3.amazonaws.com/images-hyra/<%= str_free(@title.downcase) %>.jpg, medium], [https://s3.amazonaws.com/images-hyra/<%= str_free(@title.downcase) %>.jpg, large]">
+</div>
+
+<div class="row large-8 medium-12 content-wraper">
+  <div class="column large-8 medium-10 medium-offset-1 large-offset-0 category-title"><%= @title %></div>
+</div>
+
+<div class="row align-center large-8 content-wraper">
+  <div class="column large-8 medium-10 small-12 post-wrapper">
+    <%= render @categories, as: :post || "There are no posts available." %>
+  </div>
+
   <!--<div class="column small-12 large-7 text-center">
     <%#= will_paginate @posts, :page_links => false  %>
   </div>-->
+
+  <div class="column large-4 medium-4 hide-for-small-only hide-for-medium-only section-wrapper">
+    ddadsa
+  </div>
 </div>
