@@ -19,8 +19,8 @@ describe HomePagesController, type: :controller do
 
     it "should return categories count" do
       login_user
-      arry = create_list(:post, 3, category: "I Love You")
-      get :show, category: "ILoveYou" #Remove space, str_free is called to remove space
+      arry = create_list(:post, 3, category: "Love")
+      get :show, category: "Love" #Remove space, str_free is called to remove space
       expect(assigns(:categories).count).to eq(arry.count)
     end
   end

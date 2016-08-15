@@ -42,6 +42,14 @@ describe PostsController, type: :controller do
         get :edit, id: 1
         expect(response).to redirect_to(new_user_session_path)
       end
+
+      it "redirect to root when current_user != post.user" do
+        post = create(:post)
+        current_user = create(:user)
+        login_user current_user
+        get :edit, id: post.id
+        expect(response).to redirect_to(root_path)
+      end
   end
 
   describe "#update" do

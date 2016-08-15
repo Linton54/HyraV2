@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 ruby '2.2.4'
-
+gem 'nokogiri'
+gem "figaro"
+gem "wysiwyg-rails"
 gem 'react-rails'
 gem 'ruby_dep', "1.3.1"
 gem 'rack-mini-profiler'

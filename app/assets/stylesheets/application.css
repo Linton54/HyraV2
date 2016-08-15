@@ -13,6 +13,11 @@
  *= require foundation.min.css
  *= require foundation-flex.css
  *= require mixins.scss
+ *= require froala_editor.min.css
+ *= require froala_style.min.css
+ *= require plugins/fullscreen.min.css
+ *= require plugins/file.min.css
+ *= require plugins/image.min.css
  *= require font-awesome
  *= require jquery-ui/autocomplete
  *= require_tree .
@@ -28,3 +33,17 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.fr-box {
+    margin-bottom: 15px;
+}
+
+.fr-toolbar {
+    border-top: 1px solid #dadada;
+
+
+}
+
+.fr-box.fr-basic .fr-element {
+    font-size: 14px;
+    height: 200px;
+}

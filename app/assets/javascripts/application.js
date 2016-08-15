@@ -15,6 +15,13 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require foundation.min.js
+//= require froala_editor.min.js
+//= require plugins/fullscreen.min.js
+//= require plugins/font_family.min.js
+//= require plugins/image.min.js
+//= require plugins/file.min.js
+//= require plugins/font_size.min.js
+//= require plugins/paragraph_style.min.js
 //= require turbolinks
 //= require react
 //= require react_ujs

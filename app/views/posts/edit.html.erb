@@ -1,4 +1,4 @@
-<div class="row align-center">
+<div class="row align-center content-wraper-home">
   <div class="column large-8 form-register">
     <h1 class="text-center form-logo">Hyra</h1>
     <%= form_for @post do |f| %>
@@ -8,7 +8,7 @@
         <%= f.label :content %>
         <%= f.text_area :content, class: "post-content", rows: 10 %>
         <%= f.label :category %>
-        <%= f.select :category, [['', nil], ['Missing You', "Missing You"], ['Long Distance', "Long Distance"], ['Heartbreak', "Heartbreak"], ['I Love You', "I Love You"], ['Happiness', "Happiness"]] %>
+        <%= f.select :category, options_for_select([['Love', "Love"], ['Apology', "Apology"], ['Farewell', "Farewell"], ['Thank You', "Thank You"]], @category)%>
         <%= f.submit "UPDATE", class: "button hollow small"%>
     <% end %>
   </div>

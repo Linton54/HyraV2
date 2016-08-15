@@ -21,7 +21,8 @@ lot to learn, and i will contrinue improving. Check out the app: (https://still-
 
 * Ruby version 2.2.4
 * Ruby version 4.2.5.1
-* Gem used: foundation, jquery-rails, aws-sdk, paperclip, font-awesome-rails, devise, bullet, react-rails
+* Gem used: foundation, jquery-rails, aws-sdk, paperclip, font-awesome-rails,
+            devise, bullet, react-rails, nokogiri
 
 * TestingGem used: rspec-rails, factory_girl_rails, capybara
 * Testing helper Gem used: factory_girl_rails, capybara, faker

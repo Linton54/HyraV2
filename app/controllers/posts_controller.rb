@@ -1,11 +1,13 @@
 class PostsController < ApplicationController
+  include AmazonSignature
+
   before_action :authenticate_user!
   before_action :find_user, only: [:destroy]
   before_action :find_post, only: [:update, :edit, :show]
 
   def index
-    @users = User.first(3)
     @post = current_user.posts.build
+    @hash = AmazonSignature::data_hash
   end
 
   def show
@@ -22,6 +24,8 @@ class PostsController < ApplicationController
   end
 
   def edit
+    redirect_to root_url if @post.user != current_user
+    @category = @post.category
   end
 
   def update

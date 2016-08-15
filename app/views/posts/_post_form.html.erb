@@ -1,3 +1,6 @@
+<%= content_tag :div, class: "temp_information", data: {username: current_user.username, awskey: @hash[:access_key], policy: @hash[:policy], signature: @hash[:signature]} do %>
+<% end %>
+
 <%= form_for @post do |f| %>
     <%= render 'layouts/error_messages', object: @post %>
     <%= f.label :title %>
@@ -6,6 +9,5 @@
     <%= f.text_area :content, class: "post-content", rows: 10 %>
     <%= f.label :category %>
     <%= f.select :category, options_for_select([['Love', "Love"], ['Apology', "Apology"], ['Farewell', "Farewell"], ['Thank You', "Thank You"]]), {:include_blank => true}%>
-    <%= f.submit "SEND", class: "button hollow small"%>
+    <%= f.submit "POST", class: "button hollow small"%>
 <% end %>
-

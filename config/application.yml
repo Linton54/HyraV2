@@ -1,0 +1,11 @@
+default: &default
+  aws_access_key_id: "AKIAJTRYW7ZDOUF7K7RQ"
+  aws_secret_access_key: "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"
+
+development:
+  aws_access_key_id: "AKIAJTRYW7ZDOUF7K7RQ"
+  aws_secret_access_key: "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"
+
+production:
+  aws_access_key_id: "AKIAJTRYW7ZDOUF7K7RQ"
+  aws_secret_access_key: "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"

@@ -4,16 +4,26 @@
   border-radius: 3px;
 
   .post-title{
-    margin: 20px 0 20px 0;
-    font-size: 26px;
-    font-weight: bold;
+    h3 {
+      color: #3f3f3f;
+      font-weight: bold;
+      padding: 10px 10px 10px 0;
+      margin: 0;
+    }
   }
 
   .post-content{
-    white-space: pre-line;
-    line-height: 135%;
     font-size: 15px;
     color: #666666;
+
+    br {
+      display: none;
+    }
+
+    img {
+      opacity: .7;
+      display: block;
+    }
   }
 
   .post-tags {
@@ -47,6 +57,7 @@
     padding-right: 0;
     margin: 30px 0 15px 0;
     display: table-cell;
+
     .thumbnail{
       height: 60px;
       width: 60px;
@@ -74,4 +85,16 @@
       padding-left: 0;
     }
   }
+}
+
+@media only screen and (max-width: 640px) {
+
+  .post-content{
+
+    img {
+      height: auto !important;
+    }
+
+  }
+
 }

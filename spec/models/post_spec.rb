@@ -55,4 +55,6 @@ describe Post, type: :model do
     post = build(:post, user: user)
     expect(post.user_avatar_url).to eq(user.avatar_url)
   end
+
+  it "#imge_content no image"
 end

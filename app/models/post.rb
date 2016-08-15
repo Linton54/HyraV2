@@ -19,4 +19,29 @@ class Post < ActiveRecord::Base
   def avatar_url
     user_avatar_url
   end
+
+  def image_content
+    post = Nokogiri::HTML(content)
+    post_img = post.css('img').first
+    post_img.nil? ? first_str(post) : first_str(post, post_img)
+  end
+
+
+  private
+
+  def first_str(object, img = nil)
+
+    spans = object.css('span')
+    returned_span = ""
+    return_span_with_image = ""
+
+      spans.each do |span|
+        returned_span = span
+        break if span.text.length >= 50
+      end
+
+    img.nil? ? returned_span.to_html : return_span_with_image << img.to_html << returned_span.to_html
+  end
+
 end
+

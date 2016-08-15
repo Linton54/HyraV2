@@ -13,6 +13,7 @@ $font-sen: 'Assistant', sans-serif;
 }
 
 .form-register {
+  padding-top: 10px;
   background-color: white;
   border: 1px solid #6ed3cf;
 
@@ -21,10 +22,9 @@ $font-sen: 'Assistant', sans-serif;
   }
 
   .form-logo {
-    margin: 20px 0 10px 0;
-    color: #6ed3cf;
-    font-weight: bold;
+    font-size: 45px;
     font-family: $font-logo;
+    color: #6ed3cf;
   }
 
   .form-logo-tag {
