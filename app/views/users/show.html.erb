@@ -39,7 +39,7 @@
   </div>
 </div>
 
-<div class="row align-center user-posts">
+<div class="row align-center user-posts" id="posts">
   <% if @posts.empty? %>
     <div class="callout primary">No post posted!</div>
   <% else %>
@@ -48,3 +48,5 @@
      </div>
   <% end %>
 </div>
+
+<%= will_paginate @posts %>

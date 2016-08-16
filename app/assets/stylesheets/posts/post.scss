@@ -108,6 +108,17 @@ $post-title-color: #6ed3cf;
     }
   }
 
+  .edit-delete {
+    padding-right: 0;
+    a{
+      margin-left: 10px;
+
+      .fa-pencil-square-o {
+        color: #074fe8;
+      }
+    }
+  }
+
   .post-loveit {
 
     margin: 10px 0 10px 0;

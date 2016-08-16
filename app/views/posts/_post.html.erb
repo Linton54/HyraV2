@@ -18,8 +18,13 @@
     </div>
 
     <% if real_current_user?(post.user) && user_signed_in? %>
-      <div class="column text-right">
-        <button class="btn-settings" id="<%= post.id %>" data-toggle="post-options<%= post.id %>" aria-haspopup="true" tabindex="0"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i></button>
+      <div class="column text-right edit-delete">
+        <%= link_to edit_post_path(post) do %>
+            <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to post, data: { confirm: "Are you sure?" }, method: :delete do %>
+            <i class="fa fa-trash-o fa-lg alert" aria-hidden="true"></i>
+        <% end %>
       </div>
     <% end %>
   </div>
@@ -32,16 +37,4 @@
         <%= post.comments.size %>
     <% end %>
   </div>
-</div>
-
-<div class="tiny reveal post-dr" id="post-options<%= post.id %>" data-reveal="3rsr2w-reveal" role="dialog" aria-hidden="false" data-yeti-box="exampleModal5" data-resize="exampleModal5" style="display: block; top: 112px;" tabindex="-1" data-events="resize">
-  <ul class="no-bullet text-center">
-    <% if real_current_user?(post.user) %>
-        <li><%= link_to 'Delete', post, data: { confirm: "Are you sure?" }, method: :delete %></li>
-        <li id="modal<%= post.id %>"><%= link_to 'Edit', edit_post_path(post) %></li>
-    <% else %>
-        <li><%= link_to 'Report', "#" %></li>
-    <% end %>
-  </ul>
-  <button class="close-button" data-close aria-label="Close modal" type="button"><span aria-hidden="true">&times;</span></button>
 </div>

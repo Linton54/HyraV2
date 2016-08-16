@@ -7,6 +7,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(username: params[:id])
-    @posts = @user.posts.limit(10)
+    @posts = @user.posts.paginate(page: params[:page], per_page: 5)
   end
 end

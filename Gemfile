@@ -14,7 +14,7 @@ gem 'coffee-script-source', '~> 1.8.0'
 gem 'jquery-turbolinks'
 gem "paperclip", "~> 5.0.0.beta1"
 gem "font-awesome-rails"
-#gem 'will_paginate'
+gem 'will_paginate'
 
 gem 'rails', '4.2.5.1'
 gem 'sass-rails', '~> 5.0'
@@ -49,7 +49,7 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'puma', '~> 3.4'
+  #gem 'puma', '~> 3.4'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

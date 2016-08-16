@@ -5,8 +5,11 @@ class HomePagesController < ApplicationController
   before_action :set_category, only: [:show]
 
   def home
-    user_signed_in? ? @posts = current_user.following_posts : @posts = Post.all.limit(10).includes(:user)
-    #paginate(page: params[:page], per_page: 10)
+    if user_signed_in?
+      @posts = current_user.following_posts.paginate(page: params[:page], per_page: 10)
+    else
+      @posts = Post.all.includes(:user).paginate(page: params[:page], per_page: 10)
+    end
   end
 
   def index
@@ -16,7 +19,7 @@ class HomePagesController < ApplicationController
   def show
     @title = set_category.upcase
     @count = Post.category_count(set_category)
-    @categories = Post.where(category: set_category).includes(:user)
+    @categories = Post.where(category: set_category).includes(:user).paginate(page: params[:page], per_page: 5)
   end
 
   private

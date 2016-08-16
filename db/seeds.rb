@@ -9,5 +9,5 @@ user2.confirm
 user3.confirm
 
 20.times do
-  FactoryGirl.create(:user)
+  FactoryGirl.create(:user_with_posts)
 end

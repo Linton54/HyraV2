@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<div class="row align-center large-8 content-wraper">
+<div class="row align-center large-8 content-wraper" id="posts">
   <div class="column large-8 medium-10 small-12 post-wrapper">
     <%= render @categories, as: :post || "There are no posts available." %>
   </div>
@@ -24,3 +24,5 @@
      ddadsa
    </div>-->
  </div>
+
+<%= will_paginate @categories %>

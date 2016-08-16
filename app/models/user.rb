@@ -50,9 +50,9 @@ class User < ActiveRecord::Base
   scope :all_except, -> (user, count) { where.not(id: (user.following.ids << user.id) ).limit(count) }
 
   #folliwng posts
-  def following_posts(num = nil)
+  def following_posts
     ids = following.ids << id
-    Post.where(user_id: ids).limit(num).includes(:user)
+    Post.where(user_id: ids).includes(:user)
   end
 
   #User Methods

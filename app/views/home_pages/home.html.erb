@@ -1,4 +1,3 @@
-<%#= javascript_include_tag params[:controller] %>
 <% provide(:title, "Hyra") %>
 
 <div class="row content-wraper-home large-8  align-center" id="posts">
@@ -14,3 +13,5 @@
       ddadsa
   </div>-->
 </div>
+
+<%= will_paginate @posts %>
