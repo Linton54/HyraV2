@@ -47,12 +47,12 @@ class User < ActiveRecord::Base
   has_many :followers, through: :follower_relationships, source: :follower
 
   #retrieve user except current_user
-  scope :all_except, ->(user, count) { where.not(id: (user.following.ids << user.id) ).limit(count) }
+  scope :all_except, -> (user, count) { where.not(id: (user.following.ids << user.id) ).limit(count) }
 
   #folliwng posts
-  def following_posts
+  def following_posts(num = nil)
     ids = following.ids << id
-    Post.where(user_id: ids).includes(:user)
+    Post.where(user_id: ids).limit(num).includes(:user)
   end
 
   #User Methods

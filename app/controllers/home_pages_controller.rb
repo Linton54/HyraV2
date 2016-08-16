@@ -15,6 +15,7 @@ class HomePagesController < ApplicationController
 
   def show
     @title = set_category.upcase
+    @count = Post.category_count(set_category)
     @categories = Post.where(category: set_category).includes(:user)
   end
 

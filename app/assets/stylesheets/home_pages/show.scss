@@ -10,23 +10,33 @@
 .category-title {
   background-color: #fafafa;
   color: #555;
-  letter-spacing: 0;
-  font-size: 28px;
   font-weight: bolder;
   padding: 10px 0 5px 0;
   margin-bottom: 20px;
+
+  small {
+    color:  #bababa;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 20px;
+  }
  }
 
 .topic-cover-img {
   margin-top: 75px;
   opacity: .6;
-  position: relative;
   padding-top: 21.88%;
   width: 100%;
   background-size: contain;
 }
 
 @media screen and (max-width: 640px) {
+  .category-title {
+    small {
+      font-size: 14px;
+    }
+  }
+
   .content-wraper {
     top: 0;
   }

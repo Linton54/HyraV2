@@ -26,9 +26,13 @@ $nav-control-color: #0a0a0a;
 }
 
 .dropdown-pane {
-  opacity: 1 !important;
+
+  width: 100%;
+  top: 50px;
+  left: 0px;
+
   a {
-    color: #bbb;
+    color: #666666;
   }
 }
 

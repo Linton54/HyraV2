@@ -12,7 +12,7 @@ $post-title-color: #6ed3cf;
   border-radius: 3px;
   font-size: smaller;
   color: #3f3f3f;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   position: relative;
 
   .post-nav {
@@ -109,14 +109,16 @@ $post-title-color: #6ed3cf;
   }
 
   .post-loveit {
+
     margin: 10px 0 10px 0;
-    .fa-heart-o {
+    .fa-heart-o, span {
       color: #6ed3cf;
     }
 
-    span {
-      color: #bababa;
+    .fa-comments-o, a {
+      color: #6ed3cf;
     }
+
   }
 }
 
