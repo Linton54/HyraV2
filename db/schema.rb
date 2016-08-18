@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20160809202121) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.integer  "comments_count", default: 0
+    t.integer  "love_counts",    default: 0
   end
 
   add_index "posts", ["created_at", "category"], name: "index_posts_on_created_at_and_category"

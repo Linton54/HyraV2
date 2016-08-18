@@ -2,6 +2,13 @@ $logo-color: #6ed3cf;
 $background-color: white;//#fafafa;
 $loginregister-color: #bbb;
 
+.hide-for-medium-only {
+    margin-bottom: 0 !important;
+}
+.hide-for-small-only{
+  margin-bottom: 0 !important;
+}
+
 .top-bar {
   top: 0;
   left: 0;

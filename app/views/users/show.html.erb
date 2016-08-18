@@ -1,7 +1,7 @@
 <% provide(:title, "@#{@user.username}") %>
 
 <div class="row align-center text-center content-wraper-home">
-  <div class="columns small-12 large-7 medium-7 profile">
+  <div class="columns small-12 large-7 medium-10 profile">
     <div class="profile-background-img" data-interchange="[<%= @user.profile_background_avatar_url %>, small], [<%= @user.profile_background_avatar_url %>, medium], [<%= @user.profile_background_avatar_url %>, large]">
       <div class="columns text-right fue-button" id="fue-button<%= @user.id %>">
         <%= render 'relationships/relationships_form', object: @user %>
@@ -28,12 +28,12 @@
     </div>
 
     <div class="columns">
-        <div class="columns large-4 small-4 text-right profile-img">
+        <div class="columns large-4 small-4 medium-4 text-right profile-img">
           <img class="thumbnail" src="<%= @user.avatar_url %>" alt="User Photo">
         </div>
         <div class="columns large-8 small-8 text-left profile-username">
           <span class=""><%= @user.username%></span>
-          <small><%= link_to 'Signout', destroy_user_session_path, method: :delete, class: "float-right show-for-small-only" if real_current_user?(@user) %></small>
+          <small><%= link_to 'Signout', destroy_user_session_path, method: :delete, class: "float-right show-for-medium-only mobile-signout" if real_current_user?(@user) %></small>
         </div>
     </div>
   </div>
@@ -43,7 +43,7 @@
   <% if @posts.empty? %>
     <div class="callout primary">No post posted!</div>
   <% else %>
-     <div class="column large-7 medium-7 small-12 post-wrapper">
+     <div class="column large-7 medium-10 small-12 post-wrapper">
        <%= render @posts%>
      </div>
   <% end %>

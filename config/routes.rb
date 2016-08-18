@@ -2,9 +2,7 @@ Rails.application.routes.draw do
 
   root 'home_pages#home'
 
-  resources :home_pages, as: 'category', param: :category, path: 'category', only: [:show, :home] #do
-    #resources :letters, param: :letter, only: [:index, :show]
-  #end
+  resources :home_pages, as: 'category', param: :category, path: 'category', only: [:show, :home]
 
   devise_for :users
   resources :users, only: [:show, :index]

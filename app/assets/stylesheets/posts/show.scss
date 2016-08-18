@@ -1,6 +1,7 @@
 .show-post {
   background-color: white;
-  box-shadow: 0 0 0 1px rgba(0,0,0,.10);
+  box-shadow: 0 0px 5px rgba(0,0,0,.1);
+  border: 1px solid rgba(0,0,0,.1);
   border-radius: 3px;
 
   .post-title{
@@ -35,12 +36,16 @@
   .post-social {
     margin-top: 30px;
 
+    span {
+      color: #6ed3cf;
+    }
+
     .fa-heart-o {
       color: #6ed3cf;
     }
 
     .fa-comments-o {
-      margin-left: 15px;
+      color: #6ed3cf;
     }
 
     .fa-facebook-square {
@@ -55,8 +60,7 @@
 
   .show-post-uimg {
     padding-right: 0;
-    margin: 30px 0 15px 0;
-    display: table-cell;
+    margin: 30px 0 30px 0;
 
     .thumbnail{
       height: 60px;
@@ -67,23 +71,21 @@
       margin-right: 5px;
       padding-right: 0px;
     }
-  }
-
-  .showt-post-unt {
-    margin-top: 30px;
-    padding-left: 0;
-    vertical-align: middle;
 
     .show-post-um {
       font-size: 14px;
-      padding-left: 0;
+      padding: 0px;
+      a {
+        margin-bottom: 10px;
+        color: #999;
+      }
     }
+  }
 
-    .show-post-time {
-      font-size: 10px;
-      color: #bababa;
-      padding-left: 0;
-    }
+  .show-post-time {
+    font-size: 12px;
+    color: #bababa;
+    padding: 15px 15px 0 15px;
   }
 }
 

@@ -1,18 +1,15 @@
 <div class="row align-center content-wraper-home">
-  <div class="column large-8 small-12 show-post">
+  <div class="column large-8 small-12 medium-10 show-post">
     <div class="row">
-      <div class="column small-12 medium-12 large-12 post-title"><h3><%= @post.title %></h3></div>
-      <div class="column small-12 medium-12 large-12 post-content fr-view"><%= simple_format(@post.content, {}, sanitize: false) %></div>
+        <div class="column small-12 medium-12 large-12 show-post-time text-right"><%= time_ago_in_words(@post.created_at) %> ago</div>
+        <div class="column small-12 medium-12 large-12 post-title"><h3><%= @post.title %></h3></div>
+        <div class="column small-12 medium-12 large-12 post-content fr-view"><%= simple_format(@post.content, {}, sanitize: false) %></div>
 
-      <div class="column small-12 medium-12 large-12 post-tags">
-        TAGS: broken, first-love
-      </div>
-
-      <div class="column small-12 medium-12 large-12 post-social">
+        <div class="column small-12 medium-12 large-12 post-social">
         <div class="row">
           <div class="column text-left">
-            <i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>
-            <span>12</span>
+            <!-- <i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>
+             <span>12</span>-->
             <i class="fa fa-comments-o fa-lg" aria-hidden="true"></i>
             <span id="comment-count"><%= @post.comments.size %></span>
           </div>
@@ -23,14 +20,17 @@
         </div>
       </div>
 
-      <div class="column large-2 small-3 text-center show-post-uimg">
-        <img class="thumbnail" src="<%= @post.user_avatar_url %>" alt="User Photo">
-      </div>
-      <div class="column large-10 small-8 showt-post-unt">
-        <div class="column small-12 medium-12 large-12 show-post-um">
+      <div class="column large-12small-3 show-post-uimg">
+        <div class="show-post-um columns small-2 medium-2 large-1 text-left">
+          <img class="thumbnail" src="<%= @post.user_avatar_url %>" alt="User Photo">
+        </div>
+        <div class="show-post-um columns small-4 medium-4 large-4 text-left">
           <%= link_to @post.user_username, user_path(@post.user_username) %>
         </div>
-        <div class="column small-12 medium-12 large-12 show-post-time"><%= time_ago_in_words(@post.created_at) %></div>
+
+        <div class="columns small-4 medium-4 large-4 text-right" id="fue-button<%= @post.user.id %>">
+            <%= render 'relationships/relationships_form', object: @post.user %>
+        </div>
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@
 
 <!-- Comment -->
 <div class="row align-center content-wraper">
-  <div class="column large-8 medium-11 small-11 comment-post">
+  <div class="column large-8 medium-10 small-11 comment-post">
 
     <h6 class="comment-header">Comments</h6>
     <%= react_component 'CommentBox', { comments_path: post_comments_path(@post), post_id: @post.id, current_id: current_user.id } %>
