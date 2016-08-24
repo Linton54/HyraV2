@@ -1,10 +1,10 @@
 <% unless flash[:notice] %>
   <% flash.each do |key, value| %>
-     <div class="<%= key %> callout text-center" data-closable>
+     <div class="<%= key %> callout text-center" style="margin-bottom: 5px" data-closable>
         <ul>
           <li><p> <%= value %></p></li>
         </ul>
-        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+        <button class="small close-button"  style="font-size: 20px" aria-label="Dismiss alert" type="button" data-close>
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -13,14 +13,14 @@
 
 <% if object.errors.any? %>
     <div id="error_explanation">
-      <div class="alert callout text-center" data-closable>
+      <div class="alert callout text-center" style="margin-bottom: 5px" data-closable>
         <p><strong>This form contains <%= pluralize(object.errors.count, 'error') %>.</strong></p>
         <ul>
           <% object.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
           <% end %>
         </ul>
-        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+        <button class="close-button" aria-label="Dismiss alert" style="font-size: 20px; margin-bottom: 5px" type="button" data-close>
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

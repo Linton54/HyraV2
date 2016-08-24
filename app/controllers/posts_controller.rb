@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @hash = AmazonSignature::data_hash
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:notice] = "Post is successfully posted"

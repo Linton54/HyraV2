@@ -4,7 +4,8 @@ var CommentBox = React.createClass({
     getInitialState: function() {
         return {
             setPolling: '',
-            comments: []
+            comments: [],
+            loadComment: false
         }
     },
 
@@ -59,8 +60,15 @@ var CommentBox = React.createClass({
         });
     },
 
+    loadComments: function() {
+        this.setState({loadComment: true})
+        $('.loadcomments').remove()
+    },
+
     render: function() {
-        var comments = this.state.comments.map( function(comment) {
+        var comments;
+         if(this.state.loadComment == true)
+           comments = this.state.comments.map( function(comment) {
                 return <Comment current_id={this.props.current_id} commenter_id={comment.user_id}  deleteComment={this.handleRemoveComment} key={comment.id} id={comment.id} content={comment.content} time={comment.time_ago}
                                 username={comment.user_username} avatar={comment.user_avatar_url} />
             }, this);
@@ -70,6 +78,7 @@ var CommentBox = React.createClass({
                     { comments }
                  </ReactCSSTransitionGroup>
                  <CommentForm onCommentSubmit={this.handleCommentSubmit} />
+                 <div type="button" onClick={this.loadComments} className="large expanded secondary hollow button loadcomments">Show all comments</div>
               </div>
     }
 })

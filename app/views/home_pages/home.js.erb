@@ -4,4 +4,5 @@ $('.post-wrapper').append('<%= j render(@posts) %>');
   $('.pagination').replaceWith('<%= j will_paginate(@posts) %>');
 <% else %>
   $('.pagination').remove();
+  //$('#loadmore').remove(); //load more comment or post when button is applied
 <% end %>

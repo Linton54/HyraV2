@@ -1,9 +1,11 @@
 $ ->
-  #Will paginate
+  #$('#loadmore').click ->
+    #url = $('.pagination .next_page').attr('href')
+    #$.getScript(url)
   $(window).scroll ->
     url = $('.pagination .next_page').attr('href')
     if url && ($(window).scrollTop() > $(document).height() - $(window).height() - 500)
-      $('.pagination').text("...")
+      $('.pagination').text("")
       $.getScript(url)
 
   #Mobile navigation
