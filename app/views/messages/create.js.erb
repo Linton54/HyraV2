@@ -1,8 +1,0 @@
-<% if flash[:alert].present? %>
- $("#notice").html("<%= j render('layouts/error_messages', object: message) %>");
-<% else %>
- $(".reply<%= @message.inbox_id %>").val("")
- $("#message_recipient").val("<%= @message.recipient %>")
- $(".main-convo<%= @message.inbox_id %>").append("<%= j render @message %>"); //only render if message is new
- $("#notice").html("<%= j render('layouts/notice_messages', object: message) %>");
-<% end %>

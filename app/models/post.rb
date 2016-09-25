@@ -40,6 +40,4 @@ class Post < ActiveRecord::Base
 
     img.nil? ? returned_span.to_html : return_span_with_image << img.to_html << returned_span.to_html
   end
-
 end
-

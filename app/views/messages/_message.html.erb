@@ -1,9 +1,0 @@
-<% if message.recipient == current_user.username %>
-  <div class="columns medium-6 small-12 large-12 msg-msg text-left">
-     <span class="small-6 large-6 msg-r"><%= message.content %></span>
-   </div>
-<% else %>
-  <div class="columns medium-6 small-12 large-12 msg-msg text-right">
-     <span class="small-6 large-6 msg-s"><%= message.content %></span>
-  </div>
-<% end %>
