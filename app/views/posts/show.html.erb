@@ -29,7 +29,7 @@
         </div>
 
         <div class="columns small-4 medium-4 large-4 text-right" id="fue-button<%= @post.user.id %>">
-            <%= render 'relationships/relationships_form', object: @post.user %>
+          <%= render 'relationships/relationships_form', object: @post.user if user_signed_in? %>
         </div>
       </div>
     </div>
@@ -39,8 +39,8 @@
 <!-- Comment -->
 <div class="row align-center content-wraper">
   <div class="column large-8 medium-10 small-11 comment-post">
-
     <h6 class="comment-header">Comments</h6>
-    <%= react_component 'CommentBox', { comments_path: post_comments_path(@post), post_id: @post.id, current_id: current_user.id } %>
+    <% user_id = user_signed_in? ? current_user.id : -1 %>
+    <%= react_component 'CommentBox', { comments_path: post_comments_path(@post), post_id: @post.id, current_id: user_id } %>
   </div>
 </div>

@@ -20,8 +20,10 @@ var CommentBox = React.createClass({
     },
 
     componentWillMount: function() {
-        this.loadCommentsFromServer()
-        this.setPolling = setInterval(this.loadCommentsFromServer, 3000)
+
+            this.loadCommentsFromServer()
+            this.setPolling = setInterval(this.loadCommentsFromServer, 3000)
+
     },
 
     componentWillUnmount: function()  {
@@ -66,19 +68,22 @@ var CommentBox = React.createClass({
     },
 
     render: function() {
-        var comments;
-         if(this.state.loadComment == true)
-           comments = this.state.comments.map( function(comment) {
+        if(this.props.current_id !== -1)
+          var  commentForm = <CommentForm onCommentSubmit={this.handleCommentSubmit} />
+          var  buttonForm =  <div type="button" onClick={this.loadComments} className="large expanded secondary hollow button loadcomments">Show all comments</div>
+
+        if(this.state.loadComment == true)
+           var comments = this.state.comments.map( function(comment) {
                 return <Comment current_id={this.props.current_id} commenter_id={comment.user_id}  deleteComment={this.handleRemoveComment} key={comment.id} id={comment.id} content={comment.content} time={comment.time_ago}
                                 username={comment.user_username} avatar={comment.user_avatar_url} />
             }, this);
 
         return <div className="comment-box">
                  <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={400} transitionLeaveTimeout={200}>
-                    { comments }
+                   { comments }
                  </ReactCSSTransitionGroup>
-                 <CommentForm onCommentSubmit={this.handleCommentSubmit} />
-                 <div type="button" onClick={this.loadComments} className="large expanded secondary hollow button loadcomments">Show all comments</div>
+                 { commentForm }
+                 { buttonForm }
               </div>
     }
 })

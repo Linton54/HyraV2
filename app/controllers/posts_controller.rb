@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   include AmazonSignature
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
   before_action :find_user, only: [:destroy]
   before_action :find_post, only: [:update, :edit, :show]
 
